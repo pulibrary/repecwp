@@ -1,0 +1,133 @@
+<%= form_for(@paper) do |f| %>
+  <% if @paper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paper.errors.count, "error") %> prohibited this paper from being saved:</h2>
+
+      <ul>
+      <% @paper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author1first %><br>
+    <%= f.text_field :author1first %>
+  </div>
+  <div class="field">
+    <%= f.label :author1mid %><br>
+    <%= f.text_field :author1mid %>
+  </div>
+  <div class="field">
+    <%= f.label :author1last %><br>
+    <%= f.text_field :author1last %>
+  </div>
+  <div class="field">
+    <%= f.label :author1workplace %><br>
+    <%= f.text_field :author1workplace %>
+  </div>
+  <div class="field">
+    <%= f.label :author2first %><br>
+    <%= f.text_field :author2first %>
+  </div>
+  <div class="field">
+    <%= f.label :author2mid %><br>
+    <%= f.text_field :author2mid %>
+  </div>
+  <div class="field">
+    <%= f.label :author2last %><br>
+    <%= f.text_field :author2last %>
+  </div>
+  <div class="field">
+    <%= f.label :author2workplace %><br>
+    <%= f.text_field :author2workplace %>
+  </div>
+  <div class="field">
+    <%= f.label :author3first %><br>
+    <%= f.text_field :author3first %>
+  </div>
+  <div class="field">
+    <%= f.label :author3mid %><br>
+    <%= f.text_field :author3mid %>
+  </div>
+  <div class="field">
+    <%= f.label :author3last %><br>
+    <%= f.text_field :author3last %>
+  </div>
+  <div class="field">
+    <%= f.label :author3workplace %><br>
+    <%= f.text_field :author3workplace %>
+  </div>
+  <div class="field">
+    <%= f.label :author4first %><br>
+    <%= f.text_field :author4first %>
+  </div>
+  <div class="field">
+    <%= f.label :author4mid %><br>
+    <%= f.text_field :author4mid %>
+  </div>
+  <div class="field">
+    <%= f.label :author4last %><br>
+    <%= f.text_field :author4last %>
+  </div>
+  <div class="field">
+    <%= f.label :author4workplace %><br>
+    <%= f.text_field :author4workplace %>
+  </div>
+  <div class="field">
+    <%= f.label :author5first %><br>
+    <%= f.text_field :author5first %>
+  </div>
+  <div class="field">
+    <%= f.label :author5mid %><br>
+    <%= f.text_field :author5mid %>
+  </div>
+  <div class="field">
+    <%= f.label :author5last %><br>
+    <%= f.text_field :author5last %>
+  </div>
+  <div class="field">
+    <%= f.label :author5workplace %><br>
+    <%= f.text_field :author5workplace %>
+  </div>
+  <div class="field">
+    <%= f.label :abstract %><br>
+    <%= f.text_area :abstract %>
+  </div>
+  <div class="field">
+    <%= f.label :creationdate %><br>
+    <%= f.text_field :creationdate %>
+  </div>
+  <div class="field">
+    <%= f.label :sectionurlid %><br>
+    <%= f.text_field :sectionurlid %>
+  </div>
+  <div class="field">
+    <%= f.label :papernumber %><br>
+    <%= f.text_field :papernumber %>
+  </div>
+  <div class="field">
+    <%= f.label :filefunction %><br>
+    <%= f.text_field :filefunction %>
+  </div>
+  <div class="field">
+    <%= f.label :jel %><br>
+    <%= f.text_field :jel %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords %><br>
+    <%= f.text_field :keywords %>
+  </div>
+  <div class="field">
+    <%= f.label :suppress %><br>
+    <%= f.check_box :suppress %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

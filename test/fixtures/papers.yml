@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author1first: MyString
+  author1mid: MyString
+  author1last: MyString
+  author1workplace: MyString
+  author2first: MyString
+  author2mid: MyString
+  author2last: MyString
+  author2workplace: MyString
+  author3first: MyString
+  author3mid: MyString
+  author3last: MyString
+  author3workplace: MyString
+  author4first: MyString
+  author4mid: MyString
+  author4last: MyString
+  author4workplace: MyString
+  author5first: MyString
+  author5mid: MyString
+  author5last: MyString
+  author5workplace: MyString
+  abstract: MyText
+  creationdate: MyString
+  sectionurlid: MyString
+  papernumber: MyString
+  filefunction: MyString
+  jel: MyString
+  keywords: MyString
+  suppress: false
+
+two:
+  title: MyString
+  author1first: MyString
+  author1mid: MyString
+  author1last: MyString
+  author1workplace: MyString
+  author2first: MyString
+  author2mid: MyString
+  author2last: MyString
+  author2workplace: MyString
+  author3first: MyString
+  author3mid: MyString
+  author3last: MyString
+  author3workplace: MyString
+  author4first: MyString
+  author4mid: MyString
+  author4last: MyString
+  author4workplace: MyString
+  author5first: MyString
+  author5mid: MyString
+  author5last: MyString
+  author5workplace: MyString
+  abstract: MyText
+  creationdate: MyString
+  sectionurlid: MyString
+  papernumber: MyString
+  filefunction: MyString
+  jel: MyString
+  keywords: MyString
+  suppress: false
