@@ -30,6 +30,7 @@ class CreatePapers < ActiveRecord::Migration
       t.string :jel
       t.string :keywords
       t.boolean :suppress
+      t.integer :wpid
 
       t.timestamps null: false
     end

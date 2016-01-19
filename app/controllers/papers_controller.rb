@@ -1,6 +1,8 @@
 class PapersController < ApplicationController
   before_action :set_paper, only: [:show, :edit, :update, :destroy]
 
+  skip_before_filter :authenticate_user!, only: [:show]
+
   # GET /papers
   # GET /papers.json
   def index
@@ -10,6 +12,11 @@ class PapersController < ApplicationController
   # GET /papers/1
   # GET /papers/1.json
   def show
+    respond_to do |format|
+      format.html {}
+      format.json {}
+      format.rdf { render rdf: @paper  }
+    end
   end
 
   # GET /papers/new
@@ -69,6 +76,6 @@ class PapersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paper_params
-      params.require(:paper).permit(:title, :author1first, :author1mid, :author1last, :author1workplace, :author2first, :author2mid, :author2last, :author2workplace, :author3first, :author3mid, :author3last, :author3workplace, :author4first, :author4mid, :author4last, :author4workplace, :author5first, :author5mid, :author5last, :author5workplace, :abstract, :creationdate, :sectionurlid, :papernumber, :filefunction, :jel, :keywords, :suppress)
+      params.require(:paper).permit(:title, :author1first, :author1mid, :author1last, :author1workplace, :author2first, :author2mid, :author2last, :author2workplace, :author3first, :author3mid, :author3last, :author3workplace, :author4first, :author4mid, :author4last, :author4workplace, :author5first, :author5mid, :author5last, :author5workplace, :abstract, :creationdate, :sectionurlid, :papernumber, :filefunction, :jel, :keywords, :suppress, :wpid)
     end
 end
