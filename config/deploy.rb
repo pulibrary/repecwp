@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'my_app_name'
+set :application, 'repecwp'
 set :repo_url, 'git@github.com:pulibrary/repecwp.git'
 
 # Default branch is :master
