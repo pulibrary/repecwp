@@ -45,3 +45,9 @@ rows.each do |row|
   Paper.create! row.to_hash
 end
 ```
+
+## Routing
+This app expects it will be mounted at /econlib/RePEc/
+
+## Public Downloadable Series are at
+pri/serieshandle/serieshandle.rdf

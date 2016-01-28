@@ -1,4 +1,4 @@
-<%= form_for(@paper) do |f| %>
+<%= simple_form_for(@paper, html: { class: 'form-horizontal' }) do |f| %>
   <% if @paper.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@paper.errors.count, "error") %> prohibited this paper from being saved:</h2>
@@ -127,6 +127,8 @@
     <%= f.label :suppress %><br>
     <%= f.check_box :suppress %>
   </div>
+  <div class="field">
+    <%= select "paper", "series_id", options_for_select(Series.all.collect {|s| [ s.sectionurlid, s.id ] })%>
   <div class="actions">
     <%= f.submit %>
   </div>

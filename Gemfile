@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'cancancan', '~> 1.10'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -37,12 +39,23 @@ gem 'therubyracer'
 gem 'devise'
 gem 'omniauth'
 gem "omniauth-cas"
+gem "mysql2"
+gem 'simple_form'
+gem 'pul-assets', :git => "git@github.com:pulibrary/pul_assets.git"
+gem 'bootstrap-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.0'
+end
+
+group :test do
+  gem "webmock", require: false 
+  gem 'poltergeist'
+  gem 'factory_girl_rails', require: false
+  gem 'capybara'
 end
 
 group :development do

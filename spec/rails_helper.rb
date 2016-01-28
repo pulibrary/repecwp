@@ -20,7 +20,7 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -50,6 +50,18 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
+  config.include Capybara::DSL
+  config.include Features::SessionHelpers, type: :feature
+  #config.include Features::SessionHelpers, type: :view
+
+  config.before(:each, type: :feature) do
+    Warden.test_mode!
+    OmniAuth.config.test_mode = true
+  end
+
+  config.after(:each, type: :feature) do
+    Warden.test_reset!
+  end
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:

@@ -1,0 +1,17 @@
+class CreateSeries < ActiveRecord::Migration
+  def change
+    create_table :series do |t|
+      t.string :name
+      t.string :provider_name
+      t.string :provider_homepage
+      t.string :provider_institution
+      t.string :maintainer_name
+      t.string :maintainer_email
+      t.string :series_type
+      t.string :handle
+      t.string :sectionurlid
+
+      t.timestamps null: false
+    end
+  end
+end

@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   #       :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:cas]
 
+  def admin?
+    return true if self.role == 'admin' 
+  end
 
   def to_s
     username
@@ -16,6 +19,7 @@ class User < ActiveRecord::Base
       user.provider = access_token.provider
       user.username = access_token.uid
       user.email = "#{access_token.uid}@princeton.edu"
+      user.role = 'reader'
     end
   end
 end

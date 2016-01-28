@@ -1,0 +1,19 @@
+<%= simple_form_for(@series) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :provider_name %>
+    <%= f.input :provider_homepage %>
+    <%= f.input :provider_institution %>
+    <%= f.input :maintainer_name %>
+    <%= f.input :maintainer_email %>
+    <%= f.input :series_type %>
+    <%= f.input :handle %>
+    <%= f.input :sectionurlid %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
