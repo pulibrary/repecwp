@@ -1,9 +1,15 @@
-Template-type: ReDIF-Series 1.0
-Name: <%= @series.name %>
-Provider-Name: <%= @series.Provider_name %>
-Provider-Homepage: <%= @series.provider_homepage %>
-Provider-Institution: <%= @series.provider_institution %>
-Maintainer-Name: <%= @series.maintainer_name %>
-Maintainer-Email: <%= @series.maintainer_email %>
-Type: <%= @series.series_type %>
-Handle: <%= @series.handle %>
+<% @series.papers.each do |paper| %>
+Template-Type: ReDIF-Paper 1.0
+<%= format_authors(paper) %>
+Title: <%= paper.title %>
+<% unless paper.abstract == 'NULL' %>
+Abstract: <%= paper.abstract %>
+<% end %>
+Creation-Date: <%= paper.creationdate %>
+File-URL: <%= format_file_url(paper) %>
+Number: <%= paper.papernumber %>
+Classification-JEL: <%= paper.jel %>
+Keywords: <%= paper.keywords %>
+Handle: <%= format_handle(paper) %>
+
+<% end %>

@@ -7,7 +7,8 @@
       <th>Name</th>
       <th>Provider Institution</th>
       <th>Handle</th>
-      <th colspan="3"></th>
+      <th>Papers</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -17,6 +18,8 @@
         <td><%= series.name %></td>
         <td><%= series.provider_institution %></td>
         <td><%= series.handle %></td>
+        <td><%= series.papers.size %></td>
+        <td><%= link_to 'RDF', "series/#{series.id}.rdf" %>
         <td><%= link_to 'Show', series %></td>
         <% if can? :update, series %>
           <td><%= link_to 'Edit', edit_series_path(series) %></td>

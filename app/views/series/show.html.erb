@@ -15,5 +15,10 @@
   <%= @series.sectionurlid %>
 </p>
 
+<p>
+  <strong>Papers:</strong>
+  <%= @series.papers.size %>
+</p>
+
 <%= link_to 'Edit', edit_series_path(@series) %> |
 <%= link_to 'Back', series_index_path %>

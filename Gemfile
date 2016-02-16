@@ -41,8 +41,11 @@ gem 'omniauth'
 gem "omniauth-cas"
 gem "mysql2"
 gem 'simple_form'
-gem 'pul-assets', :git => "git@github.com:pulibrary/pul_assets.git"
+gem 'pul-assets', :path => '/Users/kevinreiss/Projects/librarycore/pul_assets'
+#:git => "git@github.com:pulibrary/pul_assets.git"
 gem 'bootstrap-sass'
+gem 'susy'
+gem 'bourbon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
