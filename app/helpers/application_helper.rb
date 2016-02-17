@@ -10,4 +10,9 @@ module ApplicationHelper
   def format_authors paper
 
   end
+
+  def series_link id
+    series = Series.find(id)
+    link_to series.sectionurlid, series_path(id)
+  end
 end
