@@ -43,6 +43,7 @@ gem "mysql2"
 gem 'simple_form'
 gem 'normalize-rails'
 gem 'susy'
+gem 'breakpoint'
 gem 'bourbon'
 gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :branch => :master
 
