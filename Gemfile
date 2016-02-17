@@ -41,11 +41,10 @@ gem 'omniauth'
 gem "omniauth-cas"
 gem "mysql2"
 gem 'simple_form'
-gem 'pul-assets', :path => '/Users/kevinreiss/Projects/librarycore/pul_assets'
-#:git => "git@github.com:pulibrary/pul_assets.git"
-gem 'bootstrap-sass'
+gem 'normalize-rails'
 gem 'susy'
 gem 'bourbon'
+gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :branch => :master
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,7 +54,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "webmock", require: false 
+  gem "webmock", require: false
   gem 'poltergeist'
   gem 'factory_girl_rails', require: false
   gem 'capybara'
