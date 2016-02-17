@@ -41,6 +41,7 @@ gem 'omniauth'
 gem "omniauth-cas"
 gem "mysql2"
 gem 'simple_form'
+<<<<<<< HEAD
 gem 'normalize-rails'
 gem 'susy'
 gem 'breakpoint'
