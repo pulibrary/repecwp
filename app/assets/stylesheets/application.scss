@@ -11,8 +11,7 @@
  * file per style scope.
  *
  *= require normalize-rails
+ *= require pul-assets
  *= require_self
  */
-@import "susy";
-@import "bourbon";
 @import "pul-assets";
