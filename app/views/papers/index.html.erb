@@ -2,7 +2,7 @@
 
 <h1>Listing Papers</h1>
 
-<table>
+<table class="table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -23,7 +23,7 @@
         <td><%= paper.title %></td>
         <td><%= paper.creationdate %></td>
         <td><%= paper.sectionurlid %></td>
-        <td><%= paper.papernumber %></td>
+        <td class="wordbreak"><%= paper.papernumber %></td>
         <td><%= paper.filefunction %></td>
         <td><%= paper.jel %></td>
         <td><%= paper.keywords %></td>
