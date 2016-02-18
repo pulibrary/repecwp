@@ -1,6 +1,8 @@
 //= require 'jquery'
 jQuery(function() {
     // tablesorter
-    $("#papers").tablesorter();
-    $("#series").tablesorter();
+    $("table").tablesorter({
+        widthFixed: true,
+        widgets: ['stickyHeaders', 'filter', 'zebra'],
+    });
 });

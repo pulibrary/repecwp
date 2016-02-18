@@ -35,7 +35,7 @@
 <h2>  <%= @series.papers.size %> Attached Papers</h2>
 <p><%= link_to 'Add New Paper', new_paper_path %></p>
 
-<table id="series" class="table-striped tablesorter">
+<table class="tablesorter">
   <thead>
       <tr>
         <th>Title</th>
@@ -46,7 +46,7 @@
         <th>Jel</th>
         <th>Keywords</th>
         <th>Suppress</th>
-        <th colspan="3"></th>
+        <th colspan="3" class="filter-false"></th>
       </tr>
     </thead>
 
