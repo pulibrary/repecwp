@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery-tablesorter
+//= require jquery-tablesorter/jquery.tablesorter.combined
+//= require jquery-tablesorter/widgets/widget-uitheme
+//= require pul-assets
 //= require_tree .
 
