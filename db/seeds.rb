@@ -15,6 +15,10 @@ CSV.foreach("#{Rails.root}/db/series_seeds.csv", :headers => true) do |row|
   Series.create!(row.to_hash)
 end
 
+CSV.foreach("#{Rails.root}/db/archives_seeds.csv", :headers => true) do |row|
+  Archive.create!(row.to_hash)
+end
+
 series = Series.all
 series.each do |ser|
   papers = Paper.where(sectionurlid: ser.sectionurlid)

@@ -22,9 +22,9 @@
         <td><%= archive.maintainer_email %></td>
         <td><%= archive.description %></td>
         <td><%= archive.url %></td>
+        <td><%= link_to 'RDF', "#{archives_path(archive)}.rdf" %></td>
         <td><%= link_to 'Show', archive %></td>
         <td><%= link_to 'Edit', edit_archive_path(archive) %></td>
-        <td><%= link_to 'Destroy', archive, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -10,6 +10,8 @@ class CreateSeries < ActiveRecord::Migration
       t.string :series_type
       t.string :handle
       t.string :sectionurlid
+      t.string :base_url
+      t.string :pri_handle
 
       t.timestamps null: false
     end

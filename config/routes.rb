@@ -2,7 +2,16 @@ Rails.application.routes.draw do
   resources :archives
   resources :series
   resources :papers
-  root 'archives#index'
+  root 'archives#show', :id => 1
+  # hack to serve up archive and series index files at old URLs
+  get 'priseri', to: 'series#index', format: true
+  get 'priarch', to: 'archives#show', id: 1, format: true
+
+  # Preserve legacy path to series rdf
+  series = Series.all
+  series.each do |ser|
+    get "#{ser.pri_handle}/#{ser.pri_handle}", to: 'series#show', id: ser.id, format: true
+  end
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }, skip: [:passwords, :registration]
   devise_scope :user do
@@ -64,3 +73,4 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+
