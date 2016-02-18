@@ -6,9 +6,25 @@
 </p>
 
 <p>
+  <strong>Provider Institution:</strong>
+  <%= @series.provider_institution %>
+<p>
+
+<p>
+  <strong>Provider Homepage:</strong>
+  <%= link_to @series.provider_homepage %>
+<p>
+
+<p>
   <strong>Sectionid:</strong>
   <%= @series.handle %>
 </p>
+
+<p>
+  <strong>Princeton Handle:</strong>
+  <%= @series.pri_handle %>
+</p>
+
 
 <p>
   <strong>Sectionpath:</strong>
@@ -17,6 +33,8 @@
 
 
 <h2>  <%= @series.papers.size %> Attached Papers</h2>
+<p><%= link_to 'Add New Paper', new_paper_path %></p>
+
 <table id="series" class="table-striped tablesorter">
   <thead>
       <tr>

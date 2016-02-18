@@ -1,15 +1,28 @@
 <% @series.papers.each do |paper| %>
 Template-Type: ReDIF-Paper 1.0
-<%= format_authors(paper) %>
+<% authors = format_authors(paper) %>
+<% authors.each do |author| %>
+Author-Name: <%= author[:name] %>
+Author-X-Name-First: <%= author[:fname] %>
+Author-X-Name-Last: <%= author[:lname] %>
+Author-Workplace-Name: <%= author[:workplace] %>
+<% end %>
 Title: <%= paper.title %>
 <% unless paper.abstract == 'NULL' %>
 Abstract: <%= paper.abstract %>
 <% end %>
 Creation-Date: <%= paper.creationdate %>
 File-URL: <%= format_file_url(paper) %>
-Number: <%= paper.papernumber %>
+<% unless paper.filefunction == 'NULL' %>
+File-Function: <%= paper.filefunction %>
+<% end %>
+Number: <%= paper.wpid %>
+<% unless paper.jel == 'NULL' %>
 Classification-JEL: <%= paper.jel %>
+<% end %>
+<% unless paper.keywords == 'NULL' %>
 Keywords: <%= paper.keywords %>
+<% end %>
 Handle: <%= format_handle(paper) %>
 
 <% end %>

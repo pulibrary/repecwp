@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 20160127172245) do
     t.string   "series_type",          limit: 255
     t.string   "handle",               limit: 255
     t.string   "sectionurlid",         limit: 255
+    t.string   "base_url",             limit: 255
+    t.string   "pri_handle",           limit: 255
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end
