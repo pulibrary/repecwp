@@ -2,7 +2,7 @@
 
 <h1>Listing Papers</h1>
 
-<table class="table-striped">
+<table id="papers" class="table-striped tablesorter">
   <thead>
     <tr>
       <th>Title</th>
@@ -20,7 +20,7 @@
   <tbody>
     <% @papers.each do |paper| %>
       <tr>
-        <td><%= paper.title %></td>
+        <td id="title"><%= paper.title %></td>
         <td><%= paper.creationdate %></td>
         <td><%= paper.sectionurlid %></td>
         <td class="wordbreak"><%= paper.papernumber %></td>
