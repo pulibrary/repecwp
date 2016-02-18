@@ -13,5 +13,7 @@
  *= require normalize-rails
  *= require pul-assets
  *= require_self
+ *= require_tree .
  */
+
 @import "pul-assets";
