@@ -119,7 +119,7 @@
     <%= f.label :series_id, { class: 'form-label' } %><br>
     <%= f.select :series_id, options_for_select(Series.all.collect {|s| [ s.sectionurlid, s.id ] }, @paper.series_id )  %>
   </div>
-  <div class="actions">
+  <div class="form-actions">
     <%= f.submit %>
   </div>
 <% end %>

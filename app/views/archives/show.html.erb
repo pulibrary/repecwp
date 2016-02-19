@@ -1,29 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
 
-<p>
-  <strong>Handle:</strong>
-  <%= @archive.handle %>
-</p>
+<dl>
+   <dt>Handle</dt>
+   <dd><%= @archive.handle %></dd>
 
-<p>
-  <strong>Name:</strong>
-  <%= @archive.name %>
-</p>
+   <dt>Name</dt>
+   <dd><%= @archive.name %></dd>
 
-<p>
-  <strong>Maintainer email:</strong>
-  <%= @archive.maintainer_email %>
-</p>
+   <dt>Maintainer Email</dt>
+   <dd><%= @archive.maintainer_email %></dd>
 
-<p>
-  <strong>Description:</strong>
-  <%= @archive.description %>
-</p>
+   <dt>Description</dt>
+   <dd><%= @archive.description %></dd>
 
-<p>
-  <strong>Url:</strong>
-  <%= @archive.url %>
-</p>
+   <dt>URL</dt>
+   <dd><%= @archive.url %></dd>
+ </dl>
 
 <%= link_to 'Edit', edit_archive_path(@archive) %> |
 <%= link_to 'Back', archives_path %>

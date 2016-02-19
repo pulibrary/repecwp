@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
 
 <h1>Listing Archives</h1>
+
+<%= link_to 'Add New Archive', new_archive_path, { class: 'button pul-icon-add pull-right'} %>
 
 <table class="tablesorter">
   <thead>
@@ -29,7 +31,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Archive', new_archive_path %>
