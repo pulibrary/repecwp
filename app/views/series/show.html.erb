@@ -1,39 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @series.name %>
-</p>
+<dl>
+  <dt>Title</dt>
+  <dd><%= @series.name %></dd>
 
-<p>
-  <strong>Provider Institution:</strong>
-  <%= @series.provider_institution %>
-<p>
+  <dt>Provider Institution</dt>
+  <dd><%= @series.provider_institution %></dd>
 
-<p>
-  <strong>Provider Homepage:</strong>
-  <%= link_to @series.provider_homepage %>
-<p>
+  <dt>Provider Homepage</dt>
+  <dd><%= link_to @series.provider_homepage %></dd>
 
-<p>
-  <strong>Sectionid:</strong>
-  <%= @series.handle %>
-</p>
+  <dt>Section ID</dt>
+  <dd><%= @series.handle %></dd>
 
-<p>
-  <strong>Princeton Handle:</strong>
-  <%= @series.pri_handle %>
-</p>
+  <dt>Princeton Handle</dt>
+  <dd><%= @series.pri_handle %></dd>
 
+  <dt>Section Path</dt>
+  <dd><%= @series.sectionurlid %></dd>
+</dl>
 
-<p>
-  <strong>Sectionpath:</strong>
-  <%= @series.sectionurlid %>
-</p>
-
-
-<h2>  <%= @series.papers.size %> Attached Papers</h2>
-<p><%= link_to 'Add New Paper', new_paper_path %></p>
+<h2><%= @series.papers.size %> Attached Papers</h2>
+<%= link_to 'Add New Paper', new_paper_path, { class: 'button pul-icon-add pull-right'} %>
 
 <table class="tablesorter">
   <thead>

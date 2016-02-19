@@ -1,16 +1,32 @@
 <%= simple_form_for(@series) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :provider_name %>
-    <%= f.input :provider_homepage %>
-    <%= f.input :provider_institution %>
-    <%= f.input :maintainer_name %>
-    <%= f.input :maintainer_email %>
-    <%= f.input :series_type %>
-    <%= f.input :handle %>
-    <%= f.input :sectionurlid %>
+  <div class="form-group">
+    <%= f.input :name, placeholder: 'Name' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :provider_name, placeholder: 'Provider Name' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :provider_homepage, placeholder: 'Provider Homepage' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :provider_institution, placeholder: 'Provider Institution' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :maintainer_name, placeholder: 'Maintainer Name' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :maintainer_email, placeholder: 'Maintainer Email' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :series_type, placeholder: 'Series Type' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :handle, placeholder: 'Handle' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :sectionurlid, placeholder: 'Section URL ID' %>
   </div>
 
   <div class="form-actions">
