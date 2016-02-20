@@ -1,154 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @paper.title %>
-</p>
-
-<p>
-  <strong>Author1first:</strong>
-  <%= @paper.author1first %>
-</p>
-
-<p>
-  <strong>Author1mid:</strong>
-  <%= @paper.author1mid %>
-</p>
-
-<p>
-  <strong>Author1last:</strong>
-  <%= @paper.author1last %>
-</p>
-
-<p>
-  <strong>Author1workplace:</strong>
-  <%= @paper.author1workplace %>
-</p>
-
-<p>
-  <strong>Author2first:</strong>
-  <%= @paper.author2first %>
-</p>
-
-<p>
-  <strong>Author2mid:</strong>
-  <%= @paper.author2mid %>
-</p>
-
-<p>
-  <strong>Author2last:</strong>
-  <%= @paper.author2last %>
-</p>
-
-<p>
-  <strong>Author2workplace:</strong>
-  <%= @paper.author2workplace %>
-</p>
-
-<p>
-  <strong>Author3first:</strong>
-  <%= @paper.author3first %>
-</p>
-
-<p>
-  <strong>Author3mid:</strong>
-  <%= @paper.author3mid %>
-</p>
-
-<p>
-  <strong>Author3last:</strong>
-  <%= @paper.author3last %>
-</p>
-
-<p>
-  <strong>Author3workplace:</strong>
-  <%= @paper.author3workplace %>
-</p>
-
-<p>
-  <strong>Author4first:</strong>
-  <%= @paper.author4first %>
-</p>
-
-<p>
-  <strong>Author4mid:</strong>
-  <%= @paper.author4mid %>
-</p>
-
-<p>
-  <strong>Author4last:</strong>
-  <%= @paper.author4last %>
-</p>
-
-<p>
-  <strong>Author4workplace:</strong>
-  <%= @paper.author4workplace %>
-</p>
-
-<p>
-  <strong>Author5first:</strong>
-  <%= @paper.author5first %>
-</p>
-
-<p>
-  <strong>Author5mid:</strong>
-  <%= @paper.author5mid %>
-</p>
-
-<p>
-  <strong>Author5last:</strong>
-  <%= @paper.author5last %>
-</p>
-
-<p>
-  <strong>Author5workplace:</strong>
-  <%= @paper.author5workplace %>
-</p>
-
-<p>
-  <strong>Abstract:</strong>
-  <%= @paper.abstract %>
-</p>
-
-<p>
-  <strong>Creationdate:</strong>
-  <%= @paper.creationdate %>
-</p>
-
-<p>
-  <strong>Sectionurlid:</strong>
-  <%= @paper.sectionurlid %>
-</p>
-
-<p>
-  <strong>Papernumber:</strong>
-  <%= @paper.papernumber %>
-</p>
-
-<p>
-  <strong>Filefunction:</strong>
-  <%= @paper.filefunction %>
-</p>
-
-<p>
-  <strong>Jel:</strong>
-  <%= @paper.jel %>
-</p>
-
-<p>
-  <strong>Keywords:</strong>
-  <%= @paper.keywords %>
-</p>
-
-<p>
-  <strong>Suppress:</strong>
-  <%= @paper.suppress %>
-</p>
-
-<p>
-  <strong>Series:</strong>
-  <%= series_link(@paper.series_id) %>
-</p>
-
-<%= link_to 'Edit', edit_paper_path(@paper) %> |
+<%= link_to 'Edit', edit_paper_path(@paper), { class: 'button pul-icon-edit'} %> |
 Section Index <%= series_link @paper.series_id %>
+
+<dl>
+  <dt>Title</dt>
+  <dd><%= @paper.title %></dd>
+
+  <dt>Author(s)</dt>
+  <% authors = format_authors(@paper) %>
+  <% authors.each do |author| %>
+  <dd> <%= author[:name] %> <%= author[:fname] %> <%= author[:lname] %> (<%= author[:workplace] %>) </dd>
+  <% end %>
+
+  <dt>Abstract</dt>
+  <dd><%= @paper.abstract %></dd>
+
+  <dt>Creation Date</dt>
+  <dd><%= @paper.creationdate %></dd>
+
+  <dt>Section URL ID</dt>
+  <dd><%= @paper.sectionurlid %></dd>
+
+  <dt>Paper Number</dt>
+  <dd><%= @paper.papernumber %></dd>
+
+  <dt>File Function</dt>
+  <dd><%= @paper.filefunction %></dd>
+
+  <dt>Jel</dt>
+  <dd><%= @paper.jel %></dd>
+
+  <dt>Keyword(s)</dt>
+  <dd><%= @paper.keywords %></dd>
+
+  <dt>Suppress</dt>
+  <dd><%= @paper.suppress %></dd>
+
+  <dt>Series</dt>
+  <dd><%= series_link(@paper.series_id) %></dd>
+</dl>

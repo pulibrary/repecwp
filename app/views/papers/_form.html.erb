@@ -11,127 +11,115 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :title, { class: 'form-label' } %>
+    <%= f.text_field :title, placeholder: 'Title' %>
   </div>
-  <div class="field">
-    <%= f.label :author1first %><br>
-    <%= f.text_field :author1first %>
+  <div class="form-group">
+    <span class="form-label">Author(s)</span>
+    <div class="form-inline">
+      <%= f.label :author1first, { class: 'visually-hidden' } %>
+      <%= f.text_field :author1first, placeholder: 'First Name' %>
+
+      <%= f.label :author1mid, { class: 'visually-hidden' } %>
+      <%= f.text_field :author1mid, placeholder: 'Middle Name' %>
+
+      <%= f.label :author1last, { class: 'visually-hidden' } %>
+      <%= f.text_field :author1last, placeholder: 'Last Name' %>
+
+      <%= f.label :author1workplace, { class: 'visually-hidden' } %>
+      <%= f.text_field :author1workplace, placeholder: 'Workplace' %>
+    </div>
+    <div class="form-inline">
+      <%= f.label :author2first, { class: 'visually-hidden' } %>
+      <%= f.text_field :author2first, placeholder: 'First Name' %>
+
+      <%= f.label :author2mid, { class: 'visually-hidden' } %>
+      <%= f.text_field :author2mid, placeholder: 'Middle Name' %>
+
+      <%= f.label :author2last, { class: 'visually-hidden' } %>
+      <%= f.text_field :author2last, placeholder: 'Last Name' %>
+
+      <%= f.label :author2workplace, { class: 'visually-hidden' } %>
+      <%= f.text_field :author2workplace, placeholder: 'Workplace' %>
+    </div>
+    <div class="form-inline">
+      <%= f.label :author3first, { class: 'visually-hidden' } %>
+      <%= f.text_field :author3first, placeholder: 'First Name' %>
+
+      <%= f.label :author3mid, { class: 'visually-hidden' } %>
+      <%= f.text_field :author3mid, placeholder: 'Middle Name' %>
+
+      <%= f.label :author3last, { class: 'visually-hidden' } %>
+      <%= f.text_field :author3last, placeholder: 'Last Name' %>
+
+      <%= f.label :author3workplace, { class: 'visually-hidden' } %>
+      <%= f.text_field :author3workplace, placeholder: 'Workplace' %>
+    </div>
+    <div class="form-inline">
+      <%= f.label :author4first, { class: 'visually-hidden' } %>
+      <%= f.text_field :author4first, placeholder: 'First Name' %>
+
+      <%= f.label :author4mid, { class: 'visually-hidden' } %>
+      <%= f.text_field :author4mid, placeholder: 'Middle Name' %>
+
+      <%= f.label :author4last, { class: 'visually-hidden' } %>
+      <%= f.text_field :author4last, placeholder: 'Last Name' %>
+
+      <%= f.label :author4workplace, { class: 'visually-hidden' } %>
+      <%= f.text_field :author4workplace, placeholder: 'Workplace' %>
+    </div>
+    <div class="form-inline">
+      <%= f.label :author5first, { class: 'visually-hidden' } %>
+      <%= f.text_field :author5first, placeholder: 'First Name' %>
+
+      <%= f.label :author5mid, { class: 'visually-hidden' } %>
+      <%= f.text_field :author5mid, placeholder: 'Middle Name' %>
+
+      <%= f.label :author5last, { class: 'visually-hidden' } %>
+      <%= f.text_field :author5last, placeholder: 'Last Name' %>
+
+      <%= f.label :author5workplace, { class: 'visually-hidden' } %>
+      <%= f.text_field :author5workplace, placeholder: 'Workplace' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :author1mid %><br>
-    <%= f.text_field :author1mid %>
+  <div class="form-group">
+    <%= f.label :abstract, { class: 'form-label' } %><br>
+    <%= f.text_area :abstract, placeholder: 'Abstract' %>
   </div>
-  <div class="field">
-    <%= f.label :author1last %><br>
-    <%= f.text_field :author1last %>
+  <div class="form-group">
+    <%= f.label :creationdate, { class: 'form-label' } %><br>
+    <%= f.text_field :creationdate, placeholder: 'Creation Date' %>
   </div>
-  <div class="field">
-    <%= f.label :author1workplace %><br>
-    <%= f.text_field :author1workplace %>
+  <div class="form-group">
+    <%= f.label :sectionurlid, { class: 'form-label' } %><br>
+    <%= f.text_field :sectionurlid, placeholder: 'Section URL ID' %>
   </div>
-  <div class="field">
-    <%= f.label :author2first %><br>
-    <%= f.text_field :author2first %>
+  <div class="form-group">
+    <%= f.label :papernumber, { class: 'form-label' } %><br>
+    <%= f.text_field :papernumber, placeholder: 'Paper Number' %>
   </div>
-  <div class="field">
-    <%= f.label :author2mid %><br>
-    <%= f.text_field :author2mid %>
+  <div class="form-group">
+    <%= f.label :filefunction, { class: 'form-label' } %><br>
+    <%= f.text_field :filefunction, placeholder: 'File Function' %>
   </div>
-  <div class="field">
-    <%= f.label :author2last %><br>
-    <%= f.text_field :author2last %>
+  <div class="form-group">
+    <%= f.label :jel, { class: 'form-label' } %><br>
+    <%= f.text_field :jel, placeholder: 'Jel' %>
   </div>
-  <div class="field">
-    <%= f.label :author2workplace %><br>
-    <%= f.text_field :author2workplace %>
+  <div class="form-group">
+    <%= f.label :keywords, { class: 'form-label' } %><br>
+    <%= f.text_field :keywords, placeholder: 'Keywords' %>
   </div>
-  <div class="field">
-    <%= f.label :author3first %><br>
-    <%= f.text_field :author3first %>
-  </div>
-  <div class="field">
-    <%= f.label :author3mid %><br>
-    <%= f.text_field :author3mid %>
-  </div>
-  <div class="field">
-    <%= f.label :author3last %><br>
-    <%= f.text_field :author3last %>
-  </div>
-  <div class="field">
-    <%= f.label :author3workplace %><br>
-    <%= f.text_field :author3workplace %>
-  </div>
-  <div class="field">
-    <%= f.label :author4first %><br>
-    <%= f.text_field :author4first %>
-  </div>
-  <div class="field">
-    <%= f.label :author4mid %><br>
-    <%= f.text_field :author4mid %>
-  </div>
-  <div class="field">
-    <%= f.label :author4last %><br>
-    <%= f.text_field :author4last %>
-  </div>
-  <div class="field">
-    <%= f.label :author4workplace %><br>
-    <%= f.text_field :author4workplace %>
-  </div>
-  <div class="field">
-    <%= f.label :author5first %><br>
-    <%= f.text_field :author5first %>
-  </div>
-  <div class="field">
-    <%= f.label :author5mid %><br>
-    <%= f.text_field :author5mid %>
-  </div>
-  <div class="field">
-    <%= f.label :author5last %><br>
-    <%= f.text_field :author5last %>
-  </div>
-  <div class="field">
-    <%= f.label :author5workplace %><br>
-    <%= f.text_field :author5workplace %>
-  </div>
-  <div class="field">
-    <%= f.label :abstract %><br>
-    <%= f.text_area :abstract %>
-  </div>
-  <div class="field">
-    <%= f.label :creationdate %><br>
-    <%= f.text_field :creationdate %>
-  </div>
-  <div class="field">
-    <%= f.label :sectionurlid %><br>
-    <%= f.text_field :sectionurlid %>
-  </div>
-  <div class="field">
-    <%= f.label :papernumber %><br>
-    <%= f.text_field :papernumber %>
-  </div>
-  <div class="field">
-    <%= f.label :filefunction %><br>
-    <%= f.text_field :filefunction %>
-  </div>
-  <div class="field">
-    <%= f.label :jel %><br>
-    <%= f.text_field :jel %>
-  </div>
-  <div class="field">
-    <%= f.label :keywords %><br>
-    <%= f.text_field :keywords %>
-  </div>
-  <div class="field">
-    <%= f.label :suppress %><br>
+  <div class="form-group">
+    <%= f.label :suppress, { class: 'form-label' } %><br>
     <%= f.check_box :suppress %>
   </div>
-  <div class="field">
-    <%= f.label :series_id %><br>
+  <div class="form-group">
+    <%= f.label :series_id, { class: 'form-label' } %><br>
     <%= f.select :series_id, options_for_select(Series.all.collect {|s| [ s.sectionurlid, s.id ] }, @paper.series_id )  %>
   </div>
-  <div class="actions">
+  <div class="form-actions">
     <%= f.submit %>
   </div>
 <% end %>

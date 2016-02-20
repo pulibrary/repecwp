@@ -1,6 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
 
 <h1>Listing Series</h1>
+
+<% if can? :update, @series %>
+  <%= link_to 'Add New Series', new_series_path, { class: 'button pul-icon-add pull-right'} %>
+<% end %>
+
 <table class="tablesorter">
   <thead>
     <tr>
@@ -29,9 +34,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<% if can? :update, @series %>
-  <%= link_to 'New Series', new_series_path %>
-<% end %>
