@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
 
-CSV.foreach("#{Rails.root}/db/paper_seeds.csv", :headers => true) do |row|
+CSV.foreach("#{Rails.root}/db/paper_seeds_w_blanks.csv", skip_blanks: true, :headers => true) do |row|
   Paper.create!(row.to_hash)
 end
 

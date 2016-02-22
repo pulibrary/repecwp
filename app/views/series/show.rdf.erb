@@ -8,19 +8,19 @@ Author-X-Name-Last: <%= author[:lname] %>
 Author-Workplace-Name: <%= author[:workplace] %>
 <% end %>
 Title: <%= paper.title %>
-<% unless paper.abstract == 'NULL' %>
+<% unless paper.abstract.blank? %>
 Abstract: <%= paper.abstract %>
 <% end %>
 Creation-Date: <%= paper.creationdate %>
 File-URL: <%= format_file_url(paper) %>
-<% unless paper.filefunction == 'NULL' %>
+<% unless paper.filefunction.blank? %>
 File-Function: <%= paper.filefunction %>
 <% end %>
 Number: <%= paper.wpid %>
-<% unless paper.jel == 'NULL' %>
+<% unless paper.jel.blank? %>
 Classification-JEL: <%= paper.jel %>
 <% end %>
-<% unless paper.keywords == 'NULL' %>
+<% unless paper.keywords.blank? %>
 Keywords: <%= paper.keywords %>
 <% end %>
 Handle: <%= format_handle(paper) %>
