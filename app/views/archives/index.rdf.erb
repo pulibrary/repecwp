@@ -1,0 +1,8 @@
+<% @archives.each do |archive| %>
+Template-type: ReDIF-Archive 1.0
+Handle: <%= archive.handle %>
+Name: <%= archive.name %>
+Maintainer-Email: <%= archive.maintainer_email %>
+Description: <%= archive.description.strip %>
+URL: <%= archive.url %>
+<% end %>

@@ -21,8 +21,9 @@
 </dl>
 
 <h2><%= @series.papers.size %> Attached Papers</h2>
-<%= link_to 'Add New Paper', new_paper_path, { class: 'button pul-icon-add pull-right'} %>
-
+<% if can? :update, @series %>
+  <%= link_to 'Add New Paper', new_paper_path, { class: 'button pul-icon-add pull-right'} %>
+<% end %>
 <table class="tablesorter">
   <thead>
       <tr>
@@ -50,8 +51,10 @@
           <td><%= paper.keywords %></td>
           <td><%= paper.suppress %></td>
           <td><%= link_to 'Show', paper %></td>
-          <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
-          <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if can? :update, @series %>
+            <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
+            <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

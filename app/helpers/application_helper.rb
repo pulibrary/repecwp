@@ -14,7 +14,7 @@ module ApplicationHelper
     5.times do |i|
       n = i + 1
       current_author = eval "paper.author#{n}first"
-      unless current_author == "NULL"
+      unless current_author.blank?
         author = Hash.new
         author[:name] = format_name([ eval("paper.author#{n}first"), eval("paper.author#{n}mid"), eval("paper.author#{n}last") ])
         author[:fname] = eval "paper.author#{n}first"
