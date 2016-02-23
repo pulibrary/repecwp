@@ -33,8 +33,6 @@ gem 'cancancan', '~> 1.10'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-
 gem 'therubyracer'
 gem 'devise'
 gem 'omniauth'
@@ -47,6 +45,7 @@ gem 'breakpoint'
 gem 'bourbon'
 gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :branch => :master
 gem 'jquery-tablesorter'
+gem 'modernizr-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
