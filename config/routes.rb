@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :archives
   resources :series
   resources :papers
-  root 'archives#show', :id => 1
+  root 'series#index'
   # hack to serve up archive and series index files at old URLs
   get 'priseri', to: 'series#index', format: true
   get 'priarch', to: 'archives#index', format: true
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get "#{ser.pri_handle}/#{ser.pri_handle}", to: 'series#show', id: ser.id, format: true
     end
   end
-  
+
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }, skip: [:passwords, :registration]
   devise_scope :user do
     get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
