@@ -2,8 +2,9 @@
 
 <h1>Listing Archives</h1>
 
-<%= link_to 'Add New Archive', new_archive_path, { class: 'button pul-icon-add pull-right'} %>
-
+<% if can? :update, @archives %>
+  <%= link_to 'Add New Archive', new_archive_path, { class: 'button pul-icon-add pull-right'} %>
+<% end %>
 <table class="tablesorter">
   <thead>
     <tr>
@@ -26,7 +27,9 @@
         <td><%= archive.url %></td>
         <td><%= link_to 'RDF', "#{archives_path(archive)}.rdf" %></td>
         <td><%= link_to 'Show', archive %></td>
-        <td><%= link_to 'Edit', edit_archive_path(archive) %></td>
+        <% if can? :update, archive %>
+          <td><%= link_to 'Edit', edit_archive_path(archive) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -1,8 +1,9 @@
 <div id="notice"><%= notice %></div>
 
-<%= link_to 'Edit', edit_paper_path(@paper), { class: 'button pul-icon-edit'} %> |
-Section Index <%= series_link @paper.series_id %>
-
+<% if can? :update, @paper %>
+  <%= link_to 'Edit', edit_paper_path(@paper), { class: 'button pul-icon-edit'} %> |
+  <%= series_link @paper.series_id %>
+<% end %>
 <dl>
   <dt>Title</dt>
   <dd><%= @paper.title %></dd>
@@ -38,5 +39,5 @@ Section Index <%= series_link @paper.series_id %>
   <dd><%= @paper.suppress %></dd>
 
   <dt>Series</dt>
-  <dd><%= series_link(@paper.series_id) %></dd>
+  <dd><%= @paper.series_id %></dd>
 </dl>

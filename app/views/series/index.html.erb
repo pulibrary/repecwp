@@ -28,7 +28,6 @@
         <td><%= link_to 'Show', series %></td>
         <% if can? :update, series %>
           <td><%= link_to 'Edit', edit_series_path(series) %></td>
-          <td><%= link_to 'Destroy', series, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

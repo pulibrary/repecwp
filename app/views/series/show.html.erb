@@ -29,8 +29,6 @@
       <tr>
         <th>Title</th>
         <th>Creationdate</th>
-        <th>Sectionurlid</th>
-        <th>Papernumber</th>
         <th>Filefunction</th>
         <th>Jel</th>
         <th>Keywords</th>
@@ -44,16 +42,13 @@
         <tr>
           <td><%= paper.title %></td>
           <td><%= paper.creationdate %></td>
-          <td><%= paper.sectionurlid %></td>
-          <td class="wordbreak"><%= paper.papernumber %></td>
-          <td><%= paper.filefunction %></td>
+          <td class="wordbreak"><%= link_to(paper.papernumber, format_file_url(paper)) %></td>
           <td><%= paper.jel %></td>
           <td><%= paper.keywords %></td>
           <td><%= paper.suppress %></td>
           <td><%= link_to 'Show', paper %></td>
           <% if can? :update, @series %>
             <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
-            <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
         </tr>
       <% end %>

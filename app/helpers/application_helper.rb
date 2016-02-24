@@ -28,7 +28,7 @@ module ApplicationHelper
 
   def series_link id
     series = Series.find(id)
-    link_to series.sectionurlid, series_path(id)
+    link_to "Go to #{series.sectionurlid}", series_path(id), { class: 'button' }
   end
 
   protected
