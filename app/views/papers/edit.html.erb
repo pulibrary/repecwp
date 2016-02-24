@@ -1,6 +1,11 @@
 <h1>Editing Paper</h1>
 
-<%= render 'form' %>
+<% if can? :update, @paper %>
+  <% if can? :update, @series %>
+    <p><%= link_to( 'Delete Paper', @paper, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button warning' ) %></p>
+  <% end %>
+  <%= render 'form' %>
+<% end %> 
 
 <%= link_to 'Back', papers_path, { css: 'button pul-icon-back'} %> |
 <%= link_to 'Show', @paper, { css: 'button'} %>
