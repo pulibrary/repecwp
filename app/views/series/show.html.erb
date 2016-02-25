@@ -46,7 +46,7 @@
           <td><%= paper.jel %></td>
           <td><%= paper.keywords %></td>
           <td><%= paper.suppress %></td>
-          <td><%= link_to 'Show', paper %></td>
+          <td><%= link_to 'View', paper %></td>
           <% if can? :update, @series %>
             <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
           <% end %>
@@ -54,5 +54,5 @@
       <% end %>
     </tbody>
 </table>
-<%= link_to 'Edit', edit_series_path(@series) %> |
-<%= link_to 'Back', series_index_path %>
+<%= link_to 'Edit Series', edit_series_path(@series) %> |
+<%= link_to 'Back to Home', series_index_path %>
