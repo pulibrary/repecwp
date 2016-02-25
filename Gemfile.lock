@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:pulibrary/pul_assets.git
-  revision: 96482a64b72e7e7c020dc20ab215da280abacae2
+  revision: 16dace85bb5f7580bf95129732000127e8a0db7f
   branch: master
   specs:
     pul-assets (0.2.2)
@@ -132,7 +132,7 @@ GEM
     minitest (5.8.4)
     modernizr-rails (2.7.1)
     multi_json (1.11.2)
-    mysql2 (0.4.2)
+    mysql2 (0.4.3)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.0.2)
@@ -230,7 +230,7 @@ GEM
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.0.1)
+    sprockets-rails (3.0.2)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)

@@ -24,10 +24,10 @@
         <td><%= series.provider_institution %></td>
         <td><%= series.handle %></td>
         <td><%= series.papers.size %></td>
-        <td><%= link_to 'RDF', "#{series.pri_handle}/#{series.pri_handle}.rdf" %>
-        <td><%= link_to 'Show', series %></td>
+        <td><%= link_to 'View RDF', "#{series.pri_handle}/#{series.pri_handle}.rdf" %>
+        <td><%= link_to 'View Papers', series %></td>
         <% if can? :update, series %>
-          <td><%= link_to 'Edit', edit_series_path(series) %></td>
+          <td><%= link_to 'Edit Series', edit_series_path(series) %></td>
         <% end %>
       </tr>
     <% end %>
