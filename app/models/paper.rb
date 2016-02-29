@@ -1,3 +1,5 @@
+require 'faraday'
+
 class Paper < ActiveRecord::Base
   require 'csv'
 
@@ -9,4 +11,16 @@ class Paper < ActiveRecord::Base
     end
   end
 
+  def format_file_url
+    unless self.series_id.blank?
+      series = Series.find(self.series_id)
+      "#{series.base_url}#{self.papernumber}"
+    end
+  end
+
+  def check_url
+    unless self.format_file_url.nil?
+      Faraday.get(self.format_file_url)
+    end
+  end
 end
