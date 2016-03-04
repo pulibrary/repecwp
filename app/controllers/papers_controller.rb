@@ -76,6 +76,6 @@ class PapersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paper_params
-      params.require(:paper).permit(:title, :author1first, :author1mid, :author1last, :author1workplace, :author2first, :author2mid, :author2last, :author2workplace, :author3first, :author3mid, :author3last, :author3workplace, :author4first, :author4mid, :author4last, :author4workplace, :author5first, :author5mid, :author5last, :author5workplace, :abstract, :creationdate, :sectionurlid, :papernumber, :filefunction, :jel, :keywords, :suppress, :wpid, :series_id)
+      params.require(:paper).permit(:title, :author1first, :author1mid, :author1last, :author1workplace, :author2first, :author2mid, :author2last, :author2workplace, :author3first, :author3mid, :author3last, :author3workplace, :author4first, :author4mid, :author4last, :author4workplace, :author5first, :author5mid, :author5last, :author5workplace, :abstract, :creationdate, :sectionurlid, :papernumber, :filefunction, :jel, :keywords, :suppress, :wpid, :series_id, :url)
     end
 end

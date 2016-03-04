@@ -19,8 +19,8 @@ class Paper < ActiveRecord::Base
   end
 
   def check_url
-    unless self.format_file_url.nil?
-      Faraday.get(self.format_file_url)
+    unless self.url.nil?
+      Faraday.get(self.url)
     end
   end
 end
