@@ -12,7 +12,7 @@ Title: <%= paper.title %>
 Abstract: <%= paper.abstract %>
 <% end %>
 Creation-Date: <%= paper.creationdate %>
-File-URL: <%= format_file_url(paper) %>
+File-URL: <%= paper.url %>
 <% unless paper.filefunction.blank? %>
 File-Function: <%= paper.filefunction %>
 <% end %>
