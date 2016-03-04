@@ -28,5 +28,14 @@ series.each do |ser|
   end
 end
 
+# ADD URLS
+Paper.find_each do |paper|
+  if !paper.papernumber.nil? 
+    old_number = paper.papernumber
+    paper.url = paper.format_file_url
+    paper.save!
+    puts "Added URL #{old_number} => #{paper.papernumber}"
+  end
+end
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127172245) do
+ActiveRecord::Schema.define(version: 20160304181821) do
 
   create_table "archives", force: :cascade do |t|
     t.string   "handle",           limit: 255
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160127172245) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "series_id",        limit: 4
+    t.string   "url",              limit: 255
   end
 
   add_index "papers", ["series_id"], name: "index_papers_on_series_id", using: :btree
