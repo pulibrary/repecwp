@@ -1,7 +1,7 @@
 <div id="notice"><%= notice %></div>
 
 <% if can? :update, @paper %>
-  <%= link_to 'Edit', edit_paper_path(@paper), { class: 'button pul-icon-edit'} %> |
+  <%= link_to 'Edit', edit_paper_path(@paper), { class: 'button pul-icon-edit'} %>
   <%= series_link @paper.series_id %>
 <% end %>
 <dl>
