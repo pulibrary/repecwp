@@ -48,6 +48,7 @@ gem 'bourbon'
 gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :branch => :master
 gem 'jquery-tablesorter'
 gem 'modernizr-rails'
+gem "nokogiri", "1.8.5"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
