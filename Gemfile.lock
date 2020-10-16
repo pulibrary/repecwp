@@ -145,7 +145,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
     mini_mime (1.0.1)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.4.0)
     minitest (5.11.3)
     modernizr-rails (2.7.1)
     multi_json (1.12.1)
@@ -154,8 +154,8 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.2.0)
-    nokogiri (1.8.5)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.10.8)
+      mini_portile2 (~> 2.4.0)
     normalize-rails (3.0.3)
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
@@ -309,7 +309,7 @@ DEPENDENCIES
   jquery-tablesorter
   modernizr-rails
   mysql2
-  nokogiri (= 1.8.5)
+  nokogiri (= 1.10.8)
   normalize-rails
   omniauth
   omniauth-cas
