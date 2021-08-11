@@ -1,7 +1,7 @@
 class SeriesController < ApplicationController
   before_action :set_series, only: [:show, :edit, :update, :destroy]
 
-  skip_before_filter :authenticate_user!, only: [:show, :index]
+  skip_before_action :authenticate_user!, only: [:show, :index]
   # GET /series
   # GET /series.json
   def index

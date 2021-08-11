@@ -23,9 +23,7 @@ RSpec.describe SeriesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Series. As you add validations to Series, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) { {  name: 'name', provider_name: 'provider_name', provider_homepage: 'provider_homepage', provider_institution: 'provider_institution', maintainer_name: 'maintainer_name', maintainer_email: 'maintainer_email', series_type: 'series_type', handle: 'handle', sectionurlid: 'sectionurlid', base_url: 'base_url', pri_handle: 'pri_handle'} }
 
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
@@ -36,10 +34,14 @@ RSpec.describe SeriesController, type: :controller do
   # SeriesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  before do
+    sign_in FactoryBot.create(:user)
+  end
+
   describe "GET #index" do
     it "assigns all series as @series" do
       series = Series.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, params: {}, session: valid_session
       expect(assigns(:series)).to eq([series])
     end
   end
@@ -47,14 +49,14 @@ RSpec.describe SeriesController, type: :controller do
   describe "GET #show" do
     it "assigns the requested series as @series" do
       series = Series.create! valid_attributes
-      get :show, {:id => series.to_param}, valid_session
+      get :show, params: {:id => series.to_param}, session: valid_session
       expect(assigns(:series)).to eq(series)
     end
   end
 
   describe "GET #new" do
     it "assigns a new series as @series" do
-      get :new, {}, valid_session
+      get :new, params: {}, session:valid_session
       expect(assigns(:series)).to be_a_new(Series)
     end
   end
@@ -62,7 +64,7 @@ RSpec.describe SeriesController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested series as @series" do
       series = Series.create! valid_attributes
-      get :edit, {:id => series.to_param}, valid_session
+      get :edit, params: {:id => series.to_param}, session: valid_session
       expect(assigns(:series)).to eq(series)
     end
   end
@@ -71,30 +73,30 @@ RSpec.describe SeriesController, type: :controller do
     context "with valid params" do
       it "creates a new Series" do
         expect {
-          post :create, {:series => valid_attributes}, valid_session
+          post :create, params: {:series => valid_attributes}, session: valid_session
         }.to change(Series, :count).by(1)
       end
 
       it "assigns a newly created series as @series" do
-        post :create, {:series => valid_attributes}, valid_session
+        post :create, params: {:series => valid_attributes}, session: valid_session
         expect(assigns(:series)).to be_a(Series)
         expect(assigns(:series)).to be_persisted
       end
 
       it "redirects to the created series" do
-        post :create, {:series => valid_attributes}, valid_session
+        post :create, params: {:series => valid_attributes}, session: valid_session
         expect(response).to redirect_to(Series.last)
       end
     end
 
     context "with invalid params" do
       it "assigns a newly created but unsaved series as @series" do
-        post :create, {:series => invalid_attributes}, valid_session
+        post :create, params: {:series => invalid_attributes}, session: valid_session
         expect(assigns(:series)).to be_a_new(Series)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:series => invalid_attributes}, valid_session
+        post :create, params: {:series => invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
     end
@@ -108,20 +110,20 @@ RSpec.describe SeriesController, type: :controller do
 
       it "updates the requested series" do
         series = Series.create! valid_attributes
-        put :update, {:id => series.to_param, :series => new_attributes}, valid_session
+        put :update, params: {:id => series.to_param, :series => new_attributes}, session: valid_session
         series.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested series as @series" do
         series = Series.create! valid_attributes
-        put :update, {:id => series.to_param, :series => valid_attributes}, valid_session
+        put :update, params: {:id => series.to_param, :series => valid_attributes}, session: valid_session
         expect(assigns(:series)).to eq(series)
       end
 
       it "redirects to the series" do
         series = Series.create! valid_attributes
-        put :update, {:id => series.to_param, :series => valid_attributes}, valid_session
+        put :update, params: {:id => series.to_param, :series => valid_attributes}, session: valid_session
         expect(response).to redirect_to(series)
       end
     end
@@ -129,13 +131,13 @@ RSpec.describe SeriesController, type: :controller do
     context "with invalid params" do
       it "assigns the series as @series" do
         series = Series.create! valid_attributes
-        put :update, {:id => series.to_param, :series => invalid_attributes}, valid_session
+        put :update, params: {:id => series.to_param, :series => invalid_attributes}, session: valid_session
         expect(assigns(:series)).to eq(series)
       end
 
       it "re-renders the 'edit' template" do
         series = Series.create! valid_attributes
-        put :update, {:id => series.to_param, :series => invalid_attributes}, valid_session
+        put :update, params: {:id => series.to_param, :series => invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -145,13 +147,13 @@ RSpec.describe SeriesController, type: :controller do
     it "destroys the requested series" do
       series = Series.create! valid_attributes
       expect {
-        delete :destroy, {:id => series.to_param}, valid_session
+        delete :destroy, params: {:id => series.to_param}, session: valid_session
       }.to change(Series, :count).by(-1)
     end
 
     it "redirects to the series list" do
       series = Series.create! valid_attributes
-      delete :destroy, {:id => series.to_param}, valid_session
+      delete :destroy, params: {:id => series.to_param}, session: valid_session
       expect(response).to redirect_to(series_index_url)
     end
   end

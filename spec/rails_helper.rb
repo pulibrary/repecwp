@@ -52,7 +52,9 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
   config.include Features::SessionHelpers, type: :feature
-  #config.include Features::SessionHelpers, type: :view
+  # config.include Features::SessionHelpers, type: :view
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
 
   config.before(:each, type: :feature) do
     Warden.test_mode!

@@ -7,8 +7,8 @@
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-set :stage, :production
-set :rails_env, 'production'
+set :stage, :staging
+set :rails_env, 'staging'
 
 # role-based syntax
 # ==================
@@ -21,7 +21,7 @@ set :rails_env, 'production'
 # role :app, %w{deploy@example.com}, my_property: :my_value
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
-server 'libruby-dev', user: 'deploy', roles: %w{web app db}
+server 'repec-staging1', user: 'deploy', roles: %w{web app db}
 
 
 

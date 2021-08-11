@@ -1,7 +1,7 @@
 class PapersController < ApplicationController
   before_action :set_paper, only: [:show, :edit, :update, :destroy]
 
-  skip_before_filter :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show]
 
   # GET /papers
   # GET /papers.json

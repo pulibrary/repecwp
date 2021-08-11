@@ -16,10 +16,10 @@
 # users commonly want.
 #
 
-require 'factory_girl'
+require 'factory_bot'
 
 
-FactoryGirl.find_definitions
+FactoryBot.find_definitions
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
