@@ -23,9 +23,7 @@ RSpec.describe ArchivesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Archive. As you add validations to Archive, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) { {handle: 'handle', name: 'name', maintainer_email: "name@abc.com", description: "description", url:   "www.abc.com"} }
 
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
@@ -36,10 +34,14 @@ RSpec.describe ArchivesController, type: :controller do
   # ArchivesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  before do
+    sign_in FactoryBot.create(:user)
+  end
+
   describe "GET #index" do
     it "assigns all archives as @archives" do
       archive = Archive.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, params: {}, session:valid_session
       expect(assigns(:archives)).to eq([archive])
     end
   end
@@ -47,14 +49,14 @@ RSpec.describe ArchivesController, type: :controller do
   describe "GET #show" do
     it "assigns the requested archive as @archive" do
       archive = Archive.create! valid_attributes
-      get :show, {:id => archive.to_param}, valid_session
+      get :show, params: {:id => archive.to_param}, session: valid_session
       expect(assigns(:archive)).to eq(archive)
     end
   end
 
   describe "GET #new" do
     it "assigns a new archive as @archive" do
-      get :new, {}, valid_session
+      get :new, params: {}, session:valid_session
       expect(assigns(:archive)).to be_a_new(Archive)
     end
   end
@@ -62,7 +64,7 @@ RSpec.describe ArchivesController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested archive as @archive" do
       archive = Archive.create! valid_attributes
-      get :edit, {:id => archive.to_param}, valid_session
+      get :edit, params: {:id => archive.to_param}, session: valid_session
       expect(assigns(:archive)).to eq(archive)
     end
   end
@@ -71,30 +73,30 @@ RSpec.describe ArchivesController, type: :controller do
     context "with valid params" do
       it "creates a new Archive" do
         expect {
-          post :create, {:archive => valid_attributes}, valid_session
+          post :create, params: {:archive => valid_attributes}, session: valid_session
         }.to change(Archive, :count).by(1)
       end
 
       it "assigns a newly created archive as @archive" do
-        post :create, {:archive => valid_attributes}, valid_session
+        post :create, params: {:archive => valid_attributes}, session: valid_session
         expect(assigns(:archive)).to be_a(Archive)
         expect(assigns(:archive)).to be_persisted
       end
 
       it "redirects to the created archive" do
-        post :create, {:archive => valid_attributes}, valid_session
+        post :create, params: {:archive => valid_attributes}, session: valid_session
         expect(response).to redirect_to(Archive.last)
       end
     end
 
     context "with invalid params" do
       it "assigns a newly created but unsaved archive as @archive" do
-        post :create, {:archive => invalid_attributes}, valid_session
+        post :create, params: {:archive => invalid_attributes}, session: valid_session
         expect(assigns(:archive)).to be_a_new(Archive)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:archive => invalid_attributes}, valid_session
+        post :create,  params: {:archive => invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
     end
@@ -108,20 +110,20 @@ RSpec.describe ArchivesController, type: :controller do
 
       it "updates the requested archive" do
         archive = Archive.create! valid_attributes
-        put :update, {:id => archive.to_param, :archive => new_attributes}, valid_session
+        put :update, params: {:id => archive.to_param, :archive => new_attributes}, session: valid_session
         archive.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested archive as @archive" do
         archive = Archive.create! valid_attributes
-        put :update, {:id => archive.to_param, :archive => valid_attributes}, valid_session
+        put :update, params: {:id => archive.to_param, :archive => valid_attributes}, session: valid_session
         expect(assigns(:archive)).to eq(archive)
       end
 
       it "redirects to the archive" do
         archive = Archive.create! valid_attributes
-        put :update, {:id => archive.to_param, :archive => valid_attributes}, valid_session
+        put :update, params: {:id => archive.to_param, :archive => valid_attributes}, session: valid_session
         expect(response).to redirect_to(archive)
       end
     end
@@ -129,13 +131,13 @@ RSpec.describe ArchivesController, type: :controller do
     context "with invalid params" do
       it "assigns the archive as @archive" do
         archive = Archive.create! valid_attributes
-        put :update, {:id => archive.to_param, :archive => invalid_attributes}, valid_session
+        put :update, params: {:id => archive.to_param, :archive => invalid_attributes}, session: valid_session
         expect(assigns(:archive)).to eq(archive)
       end
 
       it "re-renders the 'edit' template" do
         archive = Archive.create! valid_attributes
-        put :update, {:id => archive.to_param, :archive => invalid_attributes}, valid_session
+        put :update, params: {:id => archive.to_param, :archive => invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -145,13 +147,13 @@ RSpec.describe ArchivesController, type: :controller do
     it "destroys the requested archive" do
       archive = Archive.create! valid_attributes
       expect {
-        delete :destroy, {:id => archive.to_param}, valid_session
+        delete :destroy, params: {:id => archive.to_param}, session: valid_session
       }.to change(Archive, :count).by(-1)
     end
 
     it "redirects to the archives list" do
       archive = Archive.create! valid_attributes
-      delete :destroy, {:id => archive.to_param}, valid_session
+      delete :destroy, params: {:id => archive.to_param}, session: valid_session
       expect(response).to redirect_to(archives_url)
     end
   end

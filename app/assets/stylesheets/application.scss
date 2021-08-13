@@ -12,8 +12,10 @@
  *
  *= require normalize-rails
  *= require pul-assets
+ *= require jquery-tablesorter/theme.black-ice
  *= require_self
  *= require_tree .
  */
-
+ 
 @import "pul-assets";
+

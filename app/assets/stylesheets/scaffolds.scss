@@ -71,3 +71,22 @@ div {
     list-style: square;
   }
 }
+
+table.tablesorter thead th{
+  background: #666d78;
+  color: #fff;
+}
+
+table.tablesorter tr{
+  border: solid 1px #e0ddd3;
+}
+
+
+table td {
+    word-break: keep-all;
+}
+table th, table td {
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+}
