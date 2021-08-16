@@ -4,5 +4,5 @@
   <%= render 'form' %>
 <% end %>
 
-<%= link_to 'Show', @archive %> |
-<%= link_to 'Back', archives_path %>
+<%= link_to 'Show', archive_path(@archive, script_name: script_name) %> |
+<%= link_to 'Back', archives_path(script_name: script_name) %>

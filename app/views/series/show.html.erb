@@ -8,7 +8,7 @@
   <dd><%= @series.provider_institution %></dd>
 
   <dt>Provider Homepage</dt>
-  <dd><%= link_to @series.provider_homepage %></dd>
+  <dd><%= link_to @series.provider_homepage, @series.provider_homepage %></dd>
 
   <dt>Section ID</dt>
   <dd><%= @series.handle %></dd>
@@ -22,7 +22,7 @@
 
 <h2><%= @series.papers.size %> Attached Papers</h2>
 <% if can? :update, @series %>
-  <%= link_to 'Add New Paper', new_paper_path, { class: 'button pul-icon-add pull-right'} %>
+  <%= link_to 'Add New Paper', new_paper_path(script_name: script_name), { class: 'button pul-icon-add pull-right'} %>
 <% end %>
 <table class="tablesorter">
   <thead>
@@ -46,13 +46,13 @@
           <td><%= paper.jel %></td>
           <td><%= paper.keywords %></td>
           <td><%= paper.suppress %></td>
-          <td><%= link_to 'View', paper %></td>
+          <td><%= link_to 'View', paper_path(paper, script_name: script_name) %></td>
           <% if can? :update, @series %>
-            <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
+            <td><%= link_to 'Edit', edit_paper_path(paper, script_name: script_name) %></td>
           <% end %>
         </tr>
       <% end %>
     </tbody>
 </table>
-<%= link_to 'Edit Series', edit_series_path(@series) %>
-<%= link_to 'Back to Home', series_index_path %>
+<%= link_to 'Edit Series', edit_series_path(@series, script_name: script_name) %>
+<%= link_to 'Back to Home', series_index_path(script_name: script_name) %>

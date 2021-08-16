@@ -28,7 +28,11 @@ module ApplicationHelper
 
   def series_link id
     series = Series.find(id)
-    link_to "Go to #{series.sectionurlid}", series_path(id), { class: 'button' }
+    link_to "Go to #{series.sectionurlid}", series_path(id, script_name: script_name), { class: 'button' }
+  end
+
+  def script_name
+    Rails.application.config.assets.prefix.gsub( "/assets", "")
   end
 
   protected
