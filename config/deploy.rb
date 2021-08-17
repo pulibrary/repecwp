@@ -34,7 +34,24 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # passenger-config restart-app which requires sudo access
 set :passenger_restart_with_touch, true
 
+# stop sprokets from crashing the production deploy
+Rake::Task["deploy:assets:backup_manifest"].clear_actions
+Rake::Task["deploy:assets:restore_manifest"].clear_actions 
+
 namespace :deploy do
+
+  #   on roles(:web) do
+  #   end
+  # end
+  desc "Place assets at the top level so that they can be access by the server as well as the proxied server" 
+  task :local_assets do
+    on roles(:web) do
+      within release_path do
+        execute "pwd"
+        execute :rake, "assets:precompile ASSET_PREFIX=/assets"
+      end
+    end
+  end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -44,5 +61,7 @@ namespace :deploy do
       # end
     end
   end
+
+  after "deploy:assets:precompile", "deploy:local_assets"
 
 end
