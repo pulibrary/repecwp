@@ -4,5 +4,5 @@
   <%= render 'form' %>
 <% end %>
 
-<%= link_to 'Show', @series %> |
-<%= link_to 'Back', series_index_path %>
+<%= link_to 'Show', series_path(@series, script_name: script_name) %> |
+<%= link_to 'Back', series_index_path(script_name: script_name) %>

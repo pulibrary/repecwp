@@ -11,4 +11,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:notice] = 'You are not authorized to manage this application'
     end
   end
+
+  def failure
+    redirect_to root_path
+  end
 end

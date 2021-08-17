@@ -2,10 +2,10 @@
 
 <% if can? :update, @paper %>
   <% if can? :update, @series %>
-    <p><%= link_to( 'Delete Paper', @paper, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button warning' ) %></p>
+    <p><%= link_to( 'Delete Paper', paper_path(@paper, script_name: script_name), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button warning' ) %></p>
   <% end %>
   <%= render 'form' %>
 <% end %> 
 
-<%= link_to 'Back', papers_path, { css: 'button pul-icon-back'} %> |
-<%= link_to 'Show', @paper, { css: 'button'} %>
+<%= link_to 'Back', papers_path(script_name: script_name), { css: 'button pul-icon-back'} %> |
+<%= link_to 'Show', paper_path(@paper, script_name: script_name), { css: 'button'} %>

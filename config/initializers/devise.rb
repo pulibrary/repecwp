@@ -263,5 +263,8 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  if Rails.env.production? || Rails.env.staging?
+    config.omniauth_path_prefix = '//users/auth'
+  end
   config.omniauth :cas, host: 'fed.princeton.edu', url: 'https://fed.princeton.edu/cas'
 end

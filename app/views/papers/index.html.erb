@@ -2,7 +2,7 @@
 
 <h1>Listing Papers</h1>
 
-<%= link_to 'Add New Paper', new_paper_path, { class: 'button pul-icon-add pull-right'} %>
+<%= link_to 'Add New Paper', new_paper_path(script_name: script_name), { class: 'button pul-icon-add pull-right'} %>
 
 <table class="tablesorter">
   <thead>
@@ -30,9 +30,9 @@
         <td><%= paper.jel %></td>
         <td><%= paper.keywords %></td>
         <td><%= paper.suppress %></td>
-        <td><%= link_to 'Show', paper %></td>
-        <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
-        <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', paper_path(paper, script_name: script_name) %></td>
+        <td><%= link_to 'Edit', edit_paper_path(paper, script_name: script_name) %></td>
+        <td><%= link_to 'Destroy', paper_path(paper, script_name: script_name), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
