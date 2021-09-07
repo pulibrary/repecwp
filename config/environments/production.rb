@@ -1,3 +1,6 @@
+Rails.application.default_url_options = { host: 'https://repec-prod.princeton.edu/', only_path: false,
+  script_name: '/econlib/RePEc/pri/' }
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -94,4 +97,6 @@ Rails.application.configure do
 
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile += %w( .svg .eot .woff .ttf)
+  
+  config.assets.prefix =  ENV["ASSET_PREFIX"] || '/econlib/RePEc/pri/assets'
 end

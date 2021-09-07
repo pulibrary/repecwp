@@ -98,5 +98,5 @@ Rails.application.configure do
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile += %w( .svg .eot .woff .ttf)
 
-  config.assets.prefix = '/econlib/RePEc/pri/assets'
+  config.assets.prefix = ENV["ASSET_PREFIX"] || '/econlib/RePEc/pri/assets'
 end
