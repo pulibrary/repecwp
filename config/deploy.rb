@@ -2,7 +2,7 @@
 lock '3.16.0'
 
 set :application, 'repecwp'
-set :repo_url, 'git@github.com:pulibrary/repecwp.git'
+set :repo_url, 'https://github.com/pulibrary/repecwp.git'
 
 set :branch, ENV["BRANCH"] || "main"
 
