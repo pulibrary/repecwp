@@ -5,11 +5,11 @@ default: &default
 development: &development
   adapter: mysql2
   encoding: utf8
-  database: <%= ENV["lando_repecwp_database_creds_database"] || repec %>
-  host: <%= ENV["lando_repecwp_database_conn_host"] %>
+  database: <%= ENV["lando_repecwp_database_creds_database"] || ENV['APP_DB'] %>
+  host: <%= ENV["lando_repecwp_database_conn_host"] || '127.0.0.1' %>
   port: <%= ENV["lando_repecwp_database_conn_port"] %>
-  username: <%= ENV["lando_repecwp_database_creds_user"] || ENV["APP_DB_USERNAME"] || 'user' %>
-  password: <%= ENV["lando_repecwp_database_creds_password"] %>
+  username: <%= ENV["lando_repecwp_database_creds_user"] || ENV['APP_DB_USERNAME'] || 'user' %>
+  password: <%= ENV["lando_repecwp_database_creds_password"] || ENV['APP_DB_PASSWORD'] %>
   pool: 5
 
 # Warning: The database defined as "test" will be erased and
