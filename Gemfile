@@ -32,7 +32,6 @@ gem 'faraday_middleware'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'therubyracer'
 gem 'devise'
 gem 'omniauth'
 gem "omniauth-cas"
@@ -57,8 +56,6 @@ group :development, :test do
 end
 
 group :test do
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.3.6'
   gem "webmock", require: false
   gem 'poltergeist'
   gem 'factory_bot_rails', require: false

@@ -5,10 +5,11 @@
 ###
 ```
 > git clone git@github.com:pulibrary/repecwp.git
-> cd repec
-> rake db:create
-> rake db:migrate
-> rake db:seed
+> cd repecwp
+> asdf install
+> bundle install
+> bundle exec rake servers:start
+```
 
 #### Create a User - Must be a valid PUL Net ID
 ```

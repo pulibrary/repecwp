@@ -1,0 +1,5 @@
+name: repecwp
+services:
+  repecwp_database:
+    type: mariadb
+    portforward: true
