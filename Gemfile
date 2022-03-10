@@ -20,7 +20,7 @@ gem 'jbuilder'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootsnap'
-gem 'cancancan', '~> 1.10'
+gem 'cancancan', '~> 3.3'
 gem 'faraday'
 gem 'faraday_middleware'
 
@@ -44,7 +44,7 @@ gem 'bourbon'
 gem 'pul-assets', github: 'pulibrary/pul_assets', branch: :main
 gem 'jquery-tablesorter'
 gem 'modernizr-rails'
-gem "nokogiri", "1.13.3"
+gem "nokogiri"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -64,7 +64,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem "capistrano", "~> 3.4"
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
