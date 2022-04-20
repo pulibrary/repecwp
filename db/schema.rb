@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2016_03_04_181821) do
 
-  create_table "archives", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "archives", id: :serial, force: :cascade do |t|
     t.string "handle"
     t.string "name"
     t.string "maintainer_email"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2016_03_04_181821) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "papers", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "papers", id: :serial, force: :cascade do |t|
     t.string "title"
     t.string "author1first"
     t.string "author1mid"
@@ -60,7 +63,7 @@ ActiveRecord::Schema.define(version: 2016_03_04_181821) do
     t.index ["series_id"], name: "index_papers_on_series_id"
   end
 
-  create_table "series", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "series", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "provider_name"
     t.string "provider_homepage"
@@ -76,7 +79,7 @@ ActiveRecord::Schema.define(version: 2016_03_04_181821) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

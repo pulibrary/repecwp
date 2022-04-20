@@ -1,0 +1,46 @@
+# Utilizing this lando file to do a migration from mysql to postgres
+# Move the existing lando file `mv .lando.yml .lando.yml.save`
+# move this lando file to .lando.yml `cp .lando-migrate.yml .lando.yml`
+# create a dump of the production database 
+#   `ssh deploy@repec-prod1` 
+#   `mysqldump -h $APP_DB_HOST -u $APP_DB_USERNAME -p$APP_DB_PASSWORD $APP_DB > repec_prod.sql; gzip repec_prod.sql`
+#   `scp deploy@repec-prod1:repec_prod.sql.gz .`
+# rebuild with migration lando `lando destroy -y; lando rebuild -y`
+# import the dump into mysql `gunzip repec_prod.sql.gz; lando db-import -h database repec_prod.sql`
+# ssh onto lando `lando ssh`
+#   `mysql -h database -u root`
+#      `create user repec_staging;`
+#      `Grant ALL PRIVILEGES on lamp.* to repec_staging;`
+#      `FLUSH PRIVILEGES;`
+#      `use lamp;`
+#      `update users set created_at=NOW(), updated_at=NOW() WHERE created_at is null;`
+#      `exit`
+#   `pgloader mysql://repec_staging@database/lamp postgresql://postgres@newpostgres/repec_staging`
+#   `pg_dump -h newpostgres -U postgres repec_staging > repec_staging.dump`
+#    `exit`
+# Edit the dump file and replace lamp with public and remove create and alter schema lines
+# Move existing lando back `mv .lando.yml.save .lando.yml`
+# rebuild with existing lando `lando destroy -y; lando rebuild -y`
+# import the postgres database into lando lando `db-import repec_staging.dump`
+# test the system using `rails s`
+#
+name: repecwp
+recipe: lamp
+config:
+  database: mysql:5.7
+  creds:
+    user: mysql
+    database: repec_staging
+    password:
+  webroot: .
+services:
+  appserver:
+    extras:
+      - apt-get update -y
+      - apt-get install sudo nano vim pgloader -y
+  newpostgres:
+    type: postgres
+    creds:
+      database: repec_staging
+      user: repec_staging
+      password:

@@ -17,7 +17,7 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc', group: :doc
 
 gem 'bootsnap'
 gem 'cancancan', '~> 3.3'
@@ -35,7 +35,7 @@ gem 'faraday_middleware'
 gem 'devise'
 gem 'omniauth'
 gem "omniauth-cas"
-gem "mysql2"
+gem "pg"
 gem 'simple_form'
 gem 'normalize-rails'
 gem 'susy'
