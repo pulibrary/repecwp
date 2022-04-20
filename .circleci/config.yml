@@ -21,13 +21,12 @@ jobs:
         environment:
           APP_DB: repec
           APP_DB_USERNAME: user
-          APP_DB_PASSWORD: repec
-      - image: cimg/mariadb:10.6
+          APP_DB_PASSWORD:
+      - image: postgres:12
         environment:
-          MYSQL_ROOT_PASSWORD: rootpw
-          MYSQL_DATABASE: repec
-          MYSQL_USER: user
-          MYSQL_PASSWORD: repec
+          POSTGRES_USER: user
+          POSTGRES_DB: repec_test
+          POSTGRES_HOST_AUTH_METHOD: trust
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
@@ -39,8 +38,8 @@ jobs:
       - node/install:
           node-version: '12.22.5'
       - run:
-          name: Wait for DB
-          command: dockerize -wait tcp://localhost:3306 -timeout 1m
+          name: Wait for PostgreSQL
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: Database setup
           command: bundle exec rails db:migrate --trace

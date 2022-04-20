@@ -1,27 +1,26 @@
 default: &default
-  pool: 5
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
   timeout: 5000
 
 development: &development
-  adapter: mysql2
-  encoding: utf8
+  <<: *default
   database: <%= ENV["lando_repecwp_database_creds_database"] || ENV['APP_DB'] %>
   host: <%= ENV["lando_repecwp_database_conn_host"] || '127.0.0.1' %>
   port: <%= ENV["lando_repecwp_database_conn_port"] %>
   username: <%= ENV["lando_repecwp_database_creds_user"] || ENV['APP_DB_USERNAME'] || 'user' %>
   password: <%= ENV["lando_repecwp_database_creds_password"] || ENV['APP_DB_PASSWORD'] %>
-  pool: 5
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *development
-
+  database: repec_test
 
 production: &production
-  adapter: mysql2
-  encoding: utf8
+  <<: *default
   database: <%= ENV.fetch("APP_DB", "repec") %>
   host: <%= ENV.fetch("APP_DB_HOST", "host") %>
   username: <%= ENV.fetch("APP_DB_USERNAME",'user') %>

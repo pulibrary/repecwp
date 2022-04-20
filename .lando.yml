@@ -1,5 +1,27 @@
 name: repecwp
 services:
   repecwp_database:
-    type: mariadb
+    type: postgres:12
     portforward: true
+    creds:
+      database: repec_staging
+      # Note that you cannot change the below but they are shown here for transparency
+      # You can read more about why this is below
+      # By "NO PASSWORD" we mean the password is blank
+      user: repec_staging
+      password: NO PASSWORD
+tooling:
+  'db-import <file>':
+    service: :host
+    description: Imports a dump file into a database service
+    cmd: /helpers/sql-import.sh
+    user: root
+    options:
+      host:
+        description: The database service to use
+        default: repecwp_database
+        alias:
+          - h
+      no-wipe:
+        description: Do not destroy the existing database before an import
+        boolean: true

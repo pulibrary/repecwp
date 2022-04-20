@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   get 'priseri', to: 'series#index', format: true
   get 'priarch', to: 'archives#index', format: true
 
-  # Preserve legacy path to series rdf
-  if ActiveRecord::Base.connection.table_exists?(:series)
-    Series.find_each do |ser|
-      get "#{ser.pri_handle}/#{ser.pri_handle}", to: 'series#show', id: ser.id, format: true
+  connection = ActiveRecord::Base.connection.nil? rescue nil 
+  unless connection.nil?
+    # Preserve legacy path to series rdf
+    if ActiveRecord::Base.connection.table_exists?(:series)
+      Series.find_each do |ser|
+        get "#{ser.pri_handle}/#{ser.pri_handle}", to: 'series#show', id: ser.id, format: true
+      end
     end
   end
 
