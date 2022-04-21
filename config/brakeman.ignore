@@ -1,0 +1,68 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 4,
+      "fingerprint": "72839607a84d8f64f2e17a919625817c11182e9e8ba2d824d633c2ececb5926c",
+      "check_name": "LinkToHref",
+      "message": "Potentially unsafe model attribute in `link_to` href",
+      "file": "app/views/series/show.html.erb",
+      "line": 45,
+      "link": "https://brakemanscanner.org/docs/warning_types/link_to_href",
+      "code": "link_to((Unresolved Model).new.papernumber, (Unresolved Model).new.url)",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "SeriesController",
+          "method": "show",
+          "line": 22,
+          "file": "app/controllers/series_controller.rb",
+          "rendered": {
+            "name": "series/show",
+            "file": "app/views/series/show.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "series/show"
+      },
+      "user_input": "(Unresolved Model).new.url",
+      "confidence": "Weak",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 4,
+      "fingerprint": "c64fa8cb92afd06ecbfe90be209f263d9595a525b9a82f13a01f1b38af5ce531",
+      "check_name": "LinkToHref",
+      "message": "Potentially unsafe model attribute in `link_to` href",
+      "file": "app/views/series/show.html.erb",
+      "line": 11,
+      "link": "https://brakemanscanner.org/docs/warning_types/link_to_href",
+      "code": "link_to(Series.new(series_params).provider_homepage, Series.new(series_params).provider_homepage)",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "SeriesController",
+          "method": "create",
+          "line": 43,
+          "file": "app/controllers/series_controller.rb",
+          "rendered": {
+            "name": "series/show",
+            "file": "app/views/series/show.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "series/show"
+      },
+      "user_input": "Series.new(series_params).provider_homepage",
+      "confidence": "Weak",
+      "note": ""
+    }
+  ],
+  "updated": "2022-04-21 09:23:15 -0400",
+  "brakeman_version": "5.2.2"
+}
