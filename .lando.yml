@@ -1,7 +1,7 @@
 name: repecwp
 services:
   repecwp_database:
-    type: postgres:12
+    type: postgres:13
     portforward: true
     creds:
       database: repec_staging
