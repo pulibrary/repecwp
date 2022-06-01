@@ -3,18 +3,25 @@
 ## Set Up Development Environment
 
 ###
-```
+```bash
 > git clone git@github.com:pulibrary/repecwp.git
 > cd repecwp
 > asdf install
 > bundle install
 > bundle exec rake servers:start
+> bundle exec rails s
 ```
 
 #### Create a User - Must be a valid PUL Net ID
-```
+```ruby
 > rails c
-> User.create(:email => 'netid@princeton.edu', :provider => 'cas', :username => 'netid', :uid => 'netid', :role => 'admin')
+> netid = REAL_NETID
+> User.create(:email => "#{netid}@princeton.edu", :provider => 'cas', :username => netid, :uid => netid, :role => 'admin')
+```
+
+#### Run tests
+```bash
+bundle exec rspec
 ```
 
 Please feel free to use a different markup language if you do not plan to run
