@@ -35,3 +35,13 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "I will be deploying ${{ github.event.inputs.branch }} to ${{ github.event.inputs.environment }}"
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7.5 # Not needed with a .ruby-version file
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - uses: miloserdow/capistrano-deploy@master
+      with:
+        target: development # Defines the environment that will be used for the deployment
+        deploy_key: ${{ secrets.DEPLOY_ENC_KEY }} # Name of the variable configured in Settings/Secrets of your github project
