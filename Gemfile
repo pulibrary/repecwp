@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', group: :doc
+gem 'rdoc', '~> 6.3.3'
 
 gem 'bootsnap'
 gem 'cancancan', '~> 3.3'
