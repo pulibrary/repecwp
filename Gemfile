@@ -38,7 +38,7 @@ gem 'normalize-rails'
 gem 'susy'
 gem 'breakpoint'
 gem 'bourbon'
-gem 'pul-assets', github: 'pulibrary/pul_assets', branch: :main
+gem 'pul-assets', github: 'pulibrary/pul_assets', branch: 'add-circleci'
 gem 'jquery-tablesorter'
 gem 'modernizr-rails'
 gem "nokogiri"

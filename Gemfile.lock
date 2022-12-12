@@ -1,5 +1,7 @@
-PATH
-  remote: ../pul_assets
+GIT
+  remote: https://github.com/pulibrary/pul_assets.git
+  revision: 2c62b67a824e6d7155259ab9e350e3af43f46dfd
+  branch: add-circleci
   specs:
     pul-assets (0.2.2)
       bourbon (>= 4.2.6)
