@@ -4,6 +4,8 @@ lock '3.16.0'
 set :application, 'repecwp'
 set :repo_url, 'https://github.com/pulibrary/repecwp.git'
 
+set :bundle_without, 'doc'
+
 set :branch, ENV["BRANCH"] || "main"
 
 # Default deploy_to directory is /var/www/my_app_name
