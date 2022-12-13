@@ -339,13 +339,13 @@ GEM
     stringio (3.0.4)
     susy (2.2.14)
       sass (>= 3.3.0, < 3.5)
+    terser (1.1.13)
+      execjs (>= 0.3.0, < 3)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.1)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -406,7 +406,7 @@ DEPENDENCIES
   simple_form
   spring
   susy
-  uglifier
+  terser
   web-console
   webmock
   webrick (~> 1.7)

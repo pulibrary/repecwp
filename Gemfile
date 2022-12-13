@@ -5,8 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 7.0'
 # Use SCSS for stylesheets
 gem 'sass-rails'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
+gem 'terser'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
