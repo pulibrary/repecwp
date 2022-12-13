@@ -16,7 +16,6 @@ gem 'jbuilder'
 gem 'sdoc', group: :doc
 gem 'rdoc', '~> 6.3.3'
 
-gem 'bootsnap'
 gem 'cancancan', '~> 3.3'
 gem 'faraday'
 gem 'faraday_middleware'
