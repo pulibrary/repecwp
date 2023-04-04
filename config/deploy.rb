@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.0'
+lock '~>3.0'
 
 set :application, 'repecwp'
 set :repo_url, 'https://github.com/pulibrary/repecwp.git'
