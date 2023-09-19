@@ -22,7 +22,8 @@ set :rails_env, 'production'
 # role :app, %w{deploy@example.com}, my_property: :my_value
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
-server 'repec-prod1', user: 'deploy', roles: %w{web app db}
+# server 'repec-prod1', user: 'deploy', roles: %w{web app db}
+server 'repec-prod2', user: 'deploy', roles: %w{web app db}
 
 
 
