@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0'
+gem 'rails', '~> 7.0.8'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'terser'
@@ -18,14 +18,6 @@ gem 'cancancan', '~> 3.3'
 gem 'faraday'
 gem 'faraday_middleware'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 gem 'devise'
 gem 'omniauth'
 gem "omniauth-cas"
@@ -47,8 +39,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
-  gem 'listen'
-  gem 'webrick', '~> 1.7'
+  gem 'webrick'
 end
 
 group :test do
@@ -61,11 +52,11 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console'
-  gem "capistrano", "~> 3.4"
+  gem 'bcrypt_pbkdf'
+  gem "capistrano"
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'ed25519'
 end
 
