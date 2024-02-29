@@ -16,7 +16,7 @@ jobs:
       - ruby/install-deps:
           key: repec-bundle
       - node/install:
-          node-version: '18.17.0'
+          node-version: '20.11.1'
 
   test:
     parameters:
@@ -42,7 +42,7 @@ jobs:
       - ruby/install-deps:
           key: repec-bundle
       - node/install:
-          node-version: '18.17.0'
+          node-version: '20.11.1'
       - run:
           name: Wait for PostgreSQL
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
