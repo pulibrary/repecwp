@@ -21,6 +21,7 @@ gem 'faraday_middleware'
 gem 'devise'
 gem 'omniauth'
 gem "omniauth-cas"
+gem "omniauth-rails_csrf_protection"
 gem "pg"
 gem 'simple_form'
 gem 'normalize-rails'

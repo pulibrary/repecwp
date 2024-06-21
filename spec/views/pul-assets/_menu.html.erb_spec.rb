@@ -10,7 +10,7 @@ RSpec.describe "pul-assets/_menu", type: :view do
     expect(rendered).to include('RDF Files')
     expect(rendered).to include('Login')
   end
-  it 'has a login button' do
+  it 'can try to log in and see notification flash' do
     visit '/'
     page.click_link('Login')
     expect(page.body).to include('You are not authorized to manage this application')
