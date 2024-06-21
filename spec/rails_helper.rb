@@ -54,12 +54,13 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
 
-  config.before(:each, type: :feature) do
+  config.before(:each, type: :view) do
+    WebMock.enable!
     Warden.test_mode!
     OmniAuth.config.test_mode = true
   end
 
-  config.after(:each, type: :feature) do
+  config.after(:each, type: :view) do
     Warden.test_reset!
   end
   # Filter lines from Rails gems in backtraces.
