@@ -51,8 +51,6 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include Capybara::DSL
-  config.include Features::SessionHelpers, type: :feature
-  # config.include Features::SessionHelpers, type: :view
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
 
