@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "series/index", type: :feature do
+RSpec.describe "series/index", type: :view do
 
   context "As an admin user" do
     let(:user) { FactoryBot.create(:princeton_admin) }

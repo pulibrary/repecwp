@@ -17,7 +17,7 @@
 #
 
 require 'factory_bot'
-
+require 'webmock/rspec'
 
 FactoryBot.find_definitions
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
