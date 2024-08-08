@@ -19,6 +19,7 @@ gem 'faraday'
 gem 'faraday_middleware'
 
 gem 'devise'
+gem 'health-monitor-rails'
 gem 'omniauth'
 gem "omniauth-cas"
 gem "omniauth-rails_csrf_protection"
