@@ -16,7 +16,6 @@ gem 'sdoc', group: :doc
 
 gem 'cancancan', '~> 3.3'
 gem 'faraday'
-gem 'faraday_middleware'
 
 gem 'devise'
 gem 'omniauth'
