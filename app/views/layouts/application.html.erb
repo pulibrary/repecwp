@@ -3,14 +3,22 @@
 <head>
   <title>Repec</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= favicon_link_tag 'favicon.ico' %>
+  <%= stylesheet_link_tag    'https://unpkg.com/lux-design-system@5/dist/style.css' %>
   <%= javascript_include_tag :modernizr %>
+  <%= javascript_include_tag 'https://unpkg.com/vue@3/dist/vue.global.prod.js' %>
+  <%= javascript_include_tag 'https://unpkg.com/lux-design-system@5/dist/lux-styleguidist.iife.js' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'pul-assets/header' %>
-  <%= yield %>
-  <%= render 'pul-assets/footer' %>
+  <div id="app">
+    <lux-library-header app-name="Repec" type="header"><%= render 'pul-assets/menu' %></lux-library-header>
+    <main>
+      <lux-wrapper :max-width="1400">
+        <%= yield %>
+      </lux-wrapper>
+    </main>
+    <lux-library-footer type="footer"></lux-library-footer>
+  </div>
 </body>
 </html>

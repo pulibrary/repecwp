@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "pul-assets/_menu", type: :view do
+RSpec.describe "pul-assets/_menu", type: :view, js: true do
   let(:omniauth_response) { OmniAuth::AuthHash.new(provider: 'cas', uid: 'someuid') }
   before do
     OmniAuth.config.mock_auth[:cas] = omniauth_response
