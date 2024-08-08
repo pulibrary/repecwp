@@ -28,7 +28,6 @@ gem 'normalize-rails'
 gem 'susy'
 gem 'breakpoint'
 gem 'bourbon'
-gem 'pul-assets', github: 'pulibrary/pul_assets', branch: :main
 gem 'jquery-tablesorter'
 gem 'modernizr-rails'
 gem "nokogiri"
@@ -37,6 +36,7 @@ group :development, :test do
   gem 'brakeman'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'puma'
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
@@ -48,6 +48,7 @@ group :test do
   gem 'poltergeist'
   gem 'factory_bot_rails', require: false
   gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :development do
