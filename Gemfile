@@ -24,7 +24,6 @@ gem "omniauth-cas"
 gem "omniauth-rails_csrf_protection"
 gem "pg"
 gem 'simple_form'
-gem 'normalize-rails'
 gem 'susy'
 gem 'breakpoint'
 gem 'bourbon'
