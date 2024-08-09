@@ -16,7 +16,6 @@ gem 'sdoc', group: :doc
 
 gem 'cancancan', '~> 3.3'
 gem 'faraday'
-gem 'faraday_middleware'
 
 gem 'devise'
 gem 'health-monitor-rails'
@@ -25,7 +24,6 @@ gem "omniauth-cas"
 gem "omniauth-rails_csrf_protection"
 gem "pg"
 gem 'simple_form'
-gem 'normalize-rails'
 gem 'susy'
 gem 'breakpoint'
 gem 'bourbon'
