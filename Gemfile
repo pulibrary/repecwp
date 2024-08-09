@@ -18,6 +18,7 @@ gem 'cancancan', '~> 3.3'
 gem 'faraday'
 
 gem 'devise'
+gem 'health-monitor-rails'
 gem 'omniauth'
 gem "omniauth-cas"
 gem "omniauth-rails_csrf_protection"
