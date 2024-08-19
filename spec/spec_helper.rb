@@ -16,6 +16,7 @@
 # users commonly want.
 #
 
+require 'active_support'
 require 'factory_bot'
 require 'webmock/rspec'
 
