@@ -1,5 +1,7 @@
 # README
 
+This application provides data about economics working papers that Princeton publishes to the [Research Papers in Economics (RePEc) project.](http://repec.org/).  It uses a format called [Research Documents Information Format (ReDIF)](https://openlib.org/acmes/root/docu/redif_1.html).
+
 ## Set Up Development Environment
 
 ###
