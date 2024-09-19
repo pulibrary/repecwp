@@ -28,7 +28,6 @@ gem 'susy'
 gem 'breakpoint'
 gem 'bourbon'
 gem 'jquery-tablesorter'
-gem 'modernizr-rails'
 gem "nokogiri"
 
 group :development, :test do

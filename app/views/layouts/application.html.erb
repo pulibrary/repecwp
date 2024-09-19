@@ -3,10 +3,9 @@
 <head>
   <title>Repec</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag    'https://unpkg.com/lux-design-system@5/dist/style.css' %>
-  <%= javascript_include_tag :modernizr %>
-  <%= javascript_include_tag 'https://unpkg.com/vue@3/dist/vue.global.prod.js' %>
-  <%= javascript_include_tag 'https://unpkg.com/lux-design-system@5/dist/lux-styleguidist.iife.js' %>
+  <%= stylesheet_link_tag    'https://unpkg.com/lux-design-system@5.6.3/dist/style.css' %>
+  <%= javascript_include_tag 'https://unpkg.com/vue@3.5.6/dist/vue.global.prod.js', nonce: true %>
+  <%= javascript_include_tag 'https://unpkg.com/lux-design-system@5.6.3/dist/lux-styleguidist.iife.js', nonce: true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
