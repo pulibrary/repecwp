@@ -47,6 +47,7 @@ group :test do
   gem 'factory_bot_rails', require: false
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'axe-core-rspec'
 end
 
 group :development do
