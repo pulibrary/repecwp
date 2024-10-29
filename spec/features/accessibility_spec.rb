@@ -1,16 +1,11 @@
 # frozen_string_literal: true
-require "rails_helper"
+require 'rails_helper'
+require 'axe-rspec'
 
 describe "accessibility", type: :feature, js: true do
-  let(:user) { FactoryBot.create(:princeton_admin) }
-
-  before(:each) do
-    sign_in user
-  end
-
   context "series listing page" do
     before do
-      visit "/"
+      visit '/'
     end
 
     it "complies with wcag" do
@@ -21,7 +16,7 @@ describe "accessibility", type: :feature, js: true do
 
   context "list of papers" do
     before do
-      visit "/econlib/RePEc/pri/series/2"
+      visit '/econlib/RePEc/pri/series/2'
     end
 
     it "complies with wcag" do
@@ -32,7 +27,7 @@ describe "accessibility", type: :feature, js: true do
 
   context "adding a new series" do
     before do
-      visit "/series/new"
+      visit '/series/new'
     end
 
     it "complies with wcag" do
