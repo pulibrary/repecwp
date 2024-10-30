@@ -62,6 +62,14 @@ RSpec.configure do |config|
     Capybara.javascript_driver = :selenium
   end
 
+  config.before(:each, type: :feature) do
+    WebMock.enable!
+    WebMock.disable_net_connect!(allow_localhost: true)
+    Warden.test_mode!
+    OmniAuth.config.test_mode = true
+    Capybara.javascript_driver = :selenium
+  end
+
   config.after(:each, type: :view) do
     Warden.test_reset!
   end
