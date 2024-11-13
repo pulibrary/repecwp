@@ -18,7 +18,7 @@ gem 'cancancan', '~> 3.3'
 gem 'faraday'
 
 gem 'devise'
-gem 'health-monitor-rails'
+gem 'health-monitor-rails', '12.4.0'
 gem 'omniauth'
 gem "omniauth-cas"
 gem "omniauth-rails_csrf_protection"
@@ -60,4 +60,3 @@ group :development do
   gem 'capistrano-passenger'
   gem 'ed25519'
 end
-
