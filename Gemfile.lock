@@ -164,7 +164,7 @@ GEM
       activesupport (>= 6.1)
     hashdiff (1.1.0)
     hashie (5.0.0)
-    health-monitor-rails (12.2.0)
+    health-monitor-rails (12.4.0)
       railties (>= 6.1)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
@@ -418,7 +418,7 @@ DEPENDENCIES
   ed25519
   factory_bot_rails
   faraday
-  health-monitor-rails
+  health-monitor-rails (= 12.4.0)
   jbuilder
   jquery-rails
   jquery-tablesorter
