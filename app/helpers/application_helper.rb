@@ -13,13 +13,13 @@ module ApplicationHelper
     authors = Array.new
     5.times do |i|
       n = i + 1
-      current_author = eval "paper.author#{n}first"
+      current_author = paper.send("author#{n}first".to_sym)
       unless current_author.blank?
         author = Hash.new
-        author[:name] = format_name([ eval("paper.author#{n}first"), eval("paper.author#{n}mid"), eval("paper.author#{n}last") ])
-        author[:fname] = eval "paper.author#{n}first"
-        author[:lname] = eval "paper.author#{n}last"
-        author[:workplace] = eval "paper.author#{n}workplace"
+        author[:name] = format_name([ paper.send("author#{n}first".to_sym), paper.send("author#{n}mid".to_sym), paper.send("author#{n}last".to_sym) ])
+        author[:fname] = paper.send("author#{n}first".to_sym)
+        author[:lname] = paper.send("author#{n}last".to_sym)
+        author[:workplace] = paper.send("author#{n}workplace".to_sym)
         authors.push(author)
       end
     end
