@@ -95,7 +95,7 @@ GEM
     bindex (0.8.1)
     bourbon (7.3.0)
       thor (~> 1.0)
-    brakeman (6.1.1)
+    brakeman (7.0.0)
       racc
     breakpoint (2.7.1)
       sass (~> 3.3)
