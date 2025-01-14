@@ -11,9 +11,8 @@ rule:
     disable-default-rules: false
     only-rule: []
     # Tickets to remediate these rules and remove from this stanza:
-    #  ruby_lang_eval_linter - https://github.com/pulibrary/repecwp/issues/139
     #  ruby_rails_default_encryption - https://github.com/pulibrary/repecwp/issues/140
-    skip-rule: [ruby_lang_eval_linter, ruby_rails_default_encryption]
+    skip-rule: [ruby_rails_default_encryption]
 scan:
     context: ""
     data_subject_mapping: ""
