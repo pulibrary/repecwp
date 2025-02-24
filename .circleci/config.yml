@@ -86,6 +86,17 @@ jobs:
       - run:
           name: Check code against community-provided and custom semgrep rules
           command: semgrep ci --config auto
+  deploy:
+    docker:
+      - image: cimg/ruby:3.4.1
+    environment:
+      # Set to default branch of your repo
+      DEFAULT_BRANCH: main
+    steps:
+      - run:
+          name: Deploy to Staging
+          command: "curl -k \"https://ansible-tower.princeton.edu/api/v2/job_templates/57/launch/\" --header \"Content-Type: application/json\" --header \"Authorization: Bearer $TOWER_TOKEN\" -d '{\"credential_passwords\":{},\"extra_vars\":{\"repo_name\":\"repecwp\"}}'"
+
 workflows:
   version: 2
   build_and_test:
@@ -100,6 +111,13 @@ workflows:
           matrix:
             parameters:
               ruby-version: ["3.4.1"]
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - main
       - brakeman:
           requires:
             - build
