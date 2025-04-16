@@ -1,0 +1,9 @@
+
+.form-inline input {
+  width: 24.5%;
+  margin-right: 3px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
