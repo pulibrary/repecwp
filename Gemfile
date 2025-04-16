@@ -5,7 +5,6 @@ source 'https://rubygems.org'
 gem 'rails', '~> 7.1'
 # Use SCSS for stylesheets
 gem 'sass-rails'
-gem 'terser'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
