@@ -2,8 +2,6 @@ version: 2.1
 
 orbs:
   ruby: circleci/ruby@1.0
-  node: circleci/node@5.0.0
-
 jobs:
   build:
     parameters:
@@ -15,8 +13,6 @@ jobs:
       - checkout
       - ruby/install-deps:
           key: repec-bundle
-      - node/install:
-          node-version: '20.11.1'
 
   test:
     parameters:
@@ -41,8 +37,6 @@ jobs:
       - checkout
       - ruby/install-deps:
           key: repec-bundle
-      - node/install:
-          node-version: '20.11.1'
       - run:
           name: Wait for PostgreSQL
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
