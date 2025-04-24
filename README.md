@@ -1,6 +1,9 @@
-# README
+# PURPOSE
 
 This application provides data about economics working papers that Princeton publishes to the [Research Papers in Economics (RePEc) project.](http://repec.org/).  It uses a format called [Research Documents Information Format (ReDIF)](https://openlib.org/acmes/root/docu/redif_1.html).
+
+[![CircleCI](https://circleci.com/gh/pulibrary/repecwp/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/repecwp/tree/main)
+[![Coverage Status](https://coveralls.io/repos/github/pulibrary/repecwp/badge.svg?branch=main)](https://coveralls.io/github/pulibrary/repecwp?branch=main)
 
 ## Set Up Development Environment
 
