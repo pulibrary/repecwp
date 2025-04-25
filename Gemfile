@@ -47,6 +47,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'axe-core-rspec'
+  gem 'simplecov', require: false
 end
 
 group :development do
