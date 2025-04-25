@@ -34,7 +34,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'puma'
-  gem 'coveralls_reborn'
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
@@ -48,6 +47,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'axe-core-rspec'
+  gem 'simplecov', require: false
 end
 
 group :development do

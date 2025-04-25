@@ -19,6 +19,9 @@
 require 'active_support'
 require 'factory_bot'
 require 'webmock/rspec'
+require 'simplecov'
+
+SimpleCov.start
 
 FactoryBot.find_definitions
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
