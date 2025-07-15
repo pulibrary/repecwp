@@ -27,6 +27,8 @@ window.addEventListener('load', () => {
             widthFixed: true,
             widgets: ['stickyHeaders', 'filter', 'zebra'],
         });
+        search = document.getElementsByClassName("tablesorter-filter-row tablesorter-ignoreRow");
+        search[0].removeAttribute("role");
     });
 })
 
