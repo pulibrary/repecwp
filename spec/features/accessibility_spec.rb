@@ -9,7 +9,6 @@ describe "accessibility", type: :feature, js: true do
     end
 
     it "complies with wcag" do
-      pending "Fix aria-required-children and html-has-lang accessibility violations"
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
     end
