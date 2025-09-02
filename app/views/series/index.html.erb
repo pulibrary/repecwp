@@ -1,35 +1,34 @@
 <div id="notice"><%= notice %></div>
+  <h1>Series Listings</h1>
 
-<h1>Series Listings</h1>
+  <% if can? :update, @series %>
+    <%= link_to 'Add New Series', new_series_path(script_name: script_name), { class: 'button pul-icon-add pull-right'} %>
+  <% end %>
 
-<% if can? :update, @series %>
-  <%= link_to 'Add New Series', new_series_path(script_name: script_name), { class: 'button pul-icon-add pull-right'} %>
-<% end %>
-
-<table class="tablesorter">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Provider Institution</th>
-      <th>Handle</th>
-      <th>Papers</th>
-      <th colspan="4" class="filter-false"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @series.each do |series| %>
+  <table class="tablesorter">
+    <thead>
       <tr>
-        <td><%= series.name %></td>
-        <td><%= series.provider_institution %></td>
-        <td><%= series.handle %></td>
-        <td><%= series.papers.size %></td>
-        <td><%= link_to 'View RDF', "#{script_name}/#{series.pri_handle}/#{series.pri_handle}.rdf" %>
-        <td><%= link_to "View Papers", series_path(series, script_name: script_name) %></td>
-        <% if can? :update, series %>
-          <td><%= link_to 'Edit Series', edit_series_path(series, script_name: script_name) %></td>
-        <% end %>
+        <th>Name</th>
+        <th>Provider Institution</th>
+        <th>Handle</th>
+        <th>Papers</th>
+        <th colspan="4" class="filter-false"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @series.each do |series| %>
+        <tr>
+          <td><%= series.name %></td>
+          <td><%= series.provider_institution %></td>
+          <td><%= series.handle %></td>
+          <td><%= series.papers.size %></td>
+          <td><%= link_to 'View RDF', "#{script_name}/#{series.pri_handle}/#{series.pri_handle}.rdf" %>
+          <td><%= link_to "View Papers", series_path(series, script_name: script_name) %></td>
+          <% if can? :update, series %>
+            <td><%= link_to 'Edit Series', edit_series_path(series, script_name: script_name) %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
