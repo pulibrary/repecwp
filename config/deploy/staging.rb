@@ -22,6 +22,7 @@ set :rails_env, 'staging'
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 server 'repec-staging1.princeton.edu', user: 'deploy', roles: %w{web app db}
+server 'repec-staging2.lib.princeton.edu', user: 'deploy', roles: %w{web app db}
 
 
 

@@ -1,0 +1,35 @@
+{
+  "packages": {
+    "ruby": { "version": "3.4.1" },
+    "nodejs": { "version": "20.11.1" },
+    "yarn": { "version": "1.22" },
+
+    "pkg-config": { "version": "latest" },
+
+    "libyaml": { "version": "latest", "outputs": ["out", "dev"] },
+    "libffi": { "version": "latest", "outputs": ["out", "dev"] },
+
+    "postgresql": { "version": "16", "outputs": ["out", "dev"] },
+
+    "openssl": { "version": "latest" },
+    "zlib": { "version": "latest" },
+    "libxml2": { "version": "latest" },
+    "libxslt": { "version": "latest" }
+  },
+  "shell": {
+    "init_hook": [
+      "bundle config set --local path 'vendor/bundle' >/dev/null",
+      "bundle config set --local without 'production' >/dev/null",
+
+      "# Avoid compiling bundled libffi inside the ffi gem",
+      "bundle config set --local build.ffi --enable-system-libffi >/dev/null"
+    ],
+    "scripts": {
+      "bundle": "bundle install",
+      "pg:init": "test -f \"$PGDATA/PG_VERSION\" || initdb",
+      "pg:start": "devbox services up -b postgresql",
+      "pg:stop": "devbox services stop postgresql"
+    }
+  }
+}
+
