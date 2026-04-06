@@ -27,11 +27,11 @@ describe "accessibility", type: :feature, js: true do
 
   context "adding a new series" do
     before do
+      sign_in FactoryBot.create(:princeton_admin)
       visit '/series/new'
     end
 
     it "complies with wcag" do
-      pending "Fix document-title and html-has-lang accessibility violations"
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
     end
