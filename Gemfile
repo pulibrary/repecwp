@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.1'
+gem 'rails', '~> 8.1'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 
@@ -17,7 +17,7 @@ gem 'cancancan', '~> 3.3'
 gem 'faraday'
 
 gem 'devise'
-gem 'health-monitor-rails', '12.4.0'
+gem 'health-monitor-rails', '12.9.0'
 gem 'omniauth'
 gem "omniauth-cas"
 gem "omniauth-rails_csrf_protection"
