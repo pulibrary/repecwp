@@ -7,25 +7,21 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
 
-CSV.foreach("#{Rails.root}/db/paper_seeds_w_blanks.csv", skip_blanks: true, :headers => true) do |row|
-  Paper.create!(row.to_hash)
+def augment_paper_with_series_id(paper)
+  @series ||= Series.all.to_h { |s| [s.sectionurlid, s.id] }
+  paper['series_id'] = @series[paper['sectionurlid']].to_s
 end
 
 CSV.foreach("#{Rails.root}/db/series_seeds.csv", :headers => true) do |row|
   Series.create!(row.to_hash)
 end
 
-CSV.foreach("#{Rails.root}/db/archives_seeds.csv", :headers => true) do |row|
-  Archive.create!(row.to_hash)
+CSV.foreach("#{Rails.root}/db/paper_seeds_w_blanks.csv", skip_blanks: true, :headers => true) do |row|
+  Paper.create!(augment_paper_with_series_id(row.to_hash))
 end
 
-series = Series.all
-series.each do |ser|
-  papers = Paper.where(sectionurlid: ser.sectionurlid)
-  papers.each do |p| 
-    p.series_id = ser.id
-    p.save 
-  end
+CSV.foreach("#{Rails.root}/db/archives_seeds.csv", :headers => true) do |row|
+  Archive.create!(row.to_hash)
 end
 
 # ADD URLS

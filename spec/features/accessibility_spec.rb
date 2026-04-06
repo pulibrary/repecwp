@@ -16,7 +16,7 @@ describe "accessibility", type: :feature, js: true do
 
   context "list of papers" do
     before do
-      visit '/econlib/RePEc/pri/series/2'
+      visit '/series/2'
     end
 
     it "complies with wcag" do
