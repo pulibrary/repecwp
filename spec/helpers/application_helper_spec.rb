@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+RSpec.configure do |config|
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+end
+
 RSpec.describe ApplicationHelper, type: :helper do
   let(:paper) do
     Paper.new(
