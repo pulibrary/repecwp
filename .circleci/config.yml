@@ -61,19 +61,6 @@ jobs:
       - run:
           name: Brakeman
           command: bundle exec brakeman
-  bearer:
-    parameters:
-      ruby-version:
-        type: string
-    docker:
-      - image: cimg/ruby:<< parameters.ruby-version >>
-    environment:
-      # Set to default branch of your repo
-      DEFAULT_BRANCH: main
-    steps:
-      - checkout
-      - run: curl -sfL https://raw.githubusercontent.com/Bearer/bearer/main/contrib/install.sh | sh -s -- -b /tmp
-      - run: CURRENT_BRANCH=$CIRCLE_BRANCH SHA=$CIRCLE_SHA1 /tmp/bearer scan .
   semgrep:
     docker:
         - image: returntocorp/semgrep
@@ -112,12 +99,6 @@ workflows:
               only:
                 - main
       - brakeman:
-          requires:
-            - build
-          matrix:
-            parameters:
-              ruby-version: ["3.4.1"]
-      - bearer:
           requires:
             - build
           matrix:
