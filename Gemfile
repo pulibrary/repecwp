@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 8.1'
+gem 'actionpack'
+gem 'actionview'
+gem 'activemodel'
+gem 'activerecord'
+gem 'activesupport'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 
