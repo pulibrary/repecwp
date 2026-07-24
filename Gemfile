@@ -45,7 +45,6 @@ end
 
 group :test do
   gem "webmock", require: false
-  gem 'poltergeist'
   gem 'factory_bot_rails', require: false
   gem 'capybara'
   gem 'selenium-webdriver'
