@@ -17,9 +17,3 @@ end
 
 Rails.application.config.content_security_policy_nonce_generator = -> request { SecureRandom.base64(16) }
 Rails.application.config.content_security_policy_nonce_directives = %w(script-src-elem)
-
-# Currently, don't enforce the CSP.
-# We should add Honeybadger to this application and report
-# CSP violations there.  Once we have no reports, we could
-# then turn on the CSP for real.
-Rails.application.config.content_security_policy_report_only = true
