@@ -18,7 +18,7 @@ gem 'faraday'
 
 gem 'health-monitor-rails', '12.9.0'
 gem 'omniauth'
-gem "omniauth-cas"
+gem 'omniauth-entra-id'
 gem "pg"
 gem 'simple_form'
 gem 'susy'
@@ -31,6 +31,7 @@ group :development, :test do
   gem 'brakeman'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'dotenv'
   gem 'puma'
   gem 'rspec-rails'
   gem 'rails-controller-testing'

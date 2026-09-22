@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # hack to serve up archive and series index files at old URLs
   get 'priseri', to: 'series#index', format: true
   get 'priarch', to: 'archives#index', format: true
-  get 'auth/cas/callback', to: 'omniauth_callbacks#cas'
+  get 'auth/entra_id/callback', to: 'omniauth_callbacks#entra_id'
   get 'logout', to: 'logout#logout'
 
   connection = ActiveRecord::Base.connection.nil? rescue nil 

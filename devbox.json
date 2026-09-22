@@ -12,7 +12,8 @@
     "zlib":    {"version": "latest"},
     "libxml2": {"version": "latest"},
     "libxslt": {"version": "latest"},
-    "git":     "latest"
+    "git":     "latest",
+    "lastpass-cli": "latest"
   },
   "shell": {
     "init_hook": [
@@ -29,6 +30,7 @@
       "pg:stop":  "devbox services stop postgresql",
       "setup": [
         "bundle",
+        "test -f .env.local || bundle exec bin/development_credentials",
         "devbox run pg:init",
         "bundle exec rake db:migrate"
       ],

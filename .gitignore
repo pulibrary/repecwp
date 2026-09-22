@@ -22,3 +22,5 @@
 /config/secrets.yml
 .byebug_history
 coverage
+
+.env.local

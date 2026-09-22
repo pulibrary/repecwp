@@ -62,17 +62,17 @@ git clone git@github.com:pulibrary/repecwp.git
 cd repecwp
 asdf install
 bundle install
+brew install lastpass-cli
+bundle exec bin/development_credentials
 bundle exec rake servers:start
 ```
 
 #### Create a User (must be a valid PUL Net ID)
 
 ```sh
-rails c
+bundle exec rails c
 User.create(
-  email: 'netid@princeton.edu',
-  provider: 'cas',
-  username: 'netid',
+  provider: 'entra_id',
   uid: 'netid',
   role: 'admin'
 )
