@@ -13,8 +13,6 @@ gem 'sass-rails'
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', group: :doc
 gem 'csv'
 gem 'cancancan', '~> 3.3'
 gem 'faraday'
@@ -37,7 +35,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'puma'
-  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'webrick'
@@ -53,8 +50,6 @@ group :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console'
   gem 'bcrypt_pbkdf'
   gem "capistrano"
   gem 'capistrano-rails'
