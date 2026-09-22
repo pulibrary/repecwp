@@ -29,7 +29,18 @@
       "bundle":   "bundle install",
       "pg:init":  "test -f \"$PGDATA/PG_VERSION\" || initdb",
       "pg:start": "devbox services up -b postgresql",
-      "pg:stop":  "devbox services stop postgresql"
+      "pg:stop":  "devbox services stop postgresql",
+      "setup": [
+        "bundle",
+        "devbox run pg:init",
+        "bundle exec rake db:migrate"
+      ],
+      "test": [
+        "bundle",
+        "devbox run pg:init",
+        "RAILS_ENV=test bundle exec rake db:migrate",
+        "bundle exec rspec"
+      ]
     }
   }
 }
