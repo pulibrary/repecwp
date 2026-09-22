@@ -27,9 +27,8 @@ This repo includes a `devbox.json` that provides Ruby/Node and native build depe
 3. Start PostgreSQL (Devbox-managed) and prepare the database
 
   ```sh
-  devbox run pg:init
   devbox run pg:start
-  bundle exec rails db:prepare
+  devbox run setup
   ```
 
 4. Run the app
@@ -42,7 +41,7 @@ Some common devbox commands:
 
 ```sh
 # run tests
-bundle exec rspec
+devbox run test
 
 # stop postgres
 devbox run pg:stop
