@@ -9,7 +9,7 @@ This application provides data about economics working papers that Princeton pub
 
 ### Option A (recommended): Devbox
 
-This repo includes a `devbox.json` that provides Ruby/Node and native build dependencies (pg, libyaml, etc.) so you don’t need to install them globally.
+This repo includes a `devbox.json` that provides Ruby and native build dependencies (pg, libyaml, etc.) so you don’t need to install them globally.
 
 1) Clone the repo
 
@@ -55,7 +55,7 @@ devbox run pg:stop
 
 ### Option B: asdf (existing workflow)
 
-If you prefer asdf-managed Ruby/Node:
+If you prefer asdf-managed Ruby
 
 ```sh
 git clone git@github.com:pulibrary/repecwp.git

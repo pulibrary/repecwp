@@ -373,71 +373,6 @@
         }
       }
     },
-    "nodejs@20.11.1": {
-      "last_modified": "2024-04-02T02:53:36Z",
-      "plugin_version": "0.0.5",
-      "resolved": "github:NixOS/nixpkgs/080a4a27f206d07724b88da096e27ef63401a504#nodejs_20",
-      "source": "devbox-search",
-      "version": "20.11.1",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/j40phqwgkcbngyiv3vziyc8kx6axj471-nodejs-20.11.1",
-              "default": true
-            },
-            {
-              "name": "libv8",
-              "path": "/nix/store/v39n7p25zq1n41b6r1qy8v83albapaw7-nodejs-20.11.1-libv8"
-            }
-          ],
-          "store_path": "/nix/store/j40phqwgkcbngyiv3vziyc8kx6axj471-nodejs-20.11.1"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/4r6qr0bzmkdjjjaf7i4vbjmf92l9zpq0-nodejs-20.11.1",
-              "default": true
-            },
-            {
-              "name": "libv8",
-              "path": "/nix/store/l6sn21nfn1xyl20i0r0500jpgbd32vg5-nodejs-20.11.1-libv8"
-            }
-          ],
-          "store_path": "/nix/store/4r6qr0bzmkdjjjaf7i4vbjmf92l9zpq0-nodejs-20.11.1"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/kwnl5cxqpa30alxwdksrjnzjrj4wrww3-nodejs-20.11.1",
-              "default": true
-            },
-            {
-              "name": "libv8",
-              "path": "/nix/store/n5skfiy87k0vh5xyhmrbrn5bgmkr1i28-nodejs-20.11.1-libv8"
-            }
-          ],
-          "store_path": "/nix/store/kwnl5cxqpa30alxwdksrjnzjrj4wrww3-nodejs-20.11.1"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/frchj7ynjnj5rwbhhdkwig25lz41y854-nodejs-20.11.1",
-              "default": true
-            },
-            {
-              "name": "libv8",
-              "path": "/nix/store/1qvbzrhpjkpik7897n7j1ryryg6zrqns-nodejs-20.11.1-libv8"
-            }
-          ],
-          "store_path": "/nix/store/frchj7ynjnj5rwbhhdkwig25lz41y854-nodejs-20.11.1"
-        }
-      }
-    },
     "openssl@latest": {
       "last_modified": "2025-12-05T06:24:47Z",
       "resolved": "github:NixOS/nixpkgs/42e29df35be6ef54091d3a3b4e97056ce0a98ce8#openssl",
@@ -833,54 +768,6 @@
             }
           ],
           "store_path": "/nix/store/sppz8mrns0gpdb40vd4a3pp25nxlz8j6-ruby-3.4.1"
-        }
-      }
-    },
-    "yarn@1.22": {
-      "last_modified": "2025-11-23T21:50:36Z",
-      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#yarn",
-      "source": "devbox-search",
-      "version": "1.22.22",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/9r7mfrk7c10kwcalzcr667czhzpxqsp1-yarn-1.22.22",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/9r7mfrk7c10kwcalzcr667czhzpxqsp1-yarn-1.22.22"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/iq6vkpq92xpfz7scx0vdvl89p8k2p4fl-yarn-1.22.22",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/iq6vkpq92xpfz7scx0vdvl89p8k2p4fl-yarn-1.22.22"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/ndp946jadqi00ac9xr9kfymbah50yrmr-yarn-1.22.22",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/ndp946jadqi00ac9xr9kfymbah50yrmr-yarn-1.22.22"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/5ygdymg3kpsxlk381nhif1mrhgp51455-yarn-1.22.22",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/5ygdymg3kpsxlk381nhif1mrhgp51455-yarn-1.22.22"
         }
       }
     },

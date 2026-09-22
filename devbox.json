@@ -1,9 +1,6 @@
 {
   "packages": {
     "ruby":   {"version": "3.4.1"},
-    "nodejs": {"version": "20.11.1"},
-    "yarn":   {"version": "1.22"},
-
     "pkg-config": {"version": "latest"},
 
     "libyaml": {"version": "latest", "outputs": ["out", "dev"]},
