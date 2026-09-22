@@ -57,3 +57,5 @@ group :development do
   gem 'capistrano-passenger'
   gem 'ed25519'
 end
+
+gem 'json', '< 3.0'
