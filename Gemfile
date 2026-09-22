@@ -37,7 +37,6 @@ group :development, :test do
   gem 'puma'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
-  gem 'webrick'
 end
 
 group :test do
