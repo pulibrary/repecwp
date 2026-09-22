@@ -14,7 +14,6 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 gem 'csv'
-gem 'cancancan', '~> 3.3'
 gem 'faraday'
 
 gem 'devise'

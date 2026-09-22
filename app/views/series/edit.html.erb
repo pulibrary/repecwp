@@ -1,6 +1,6 @@
 <h1>Editing Series</h1>
 
-<% if can? :update, @paper %>
+<% if current_user&.admin? %>
   <%= render 'form' %>
 <% end %>
 

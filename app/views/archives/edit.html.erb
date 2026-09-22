@@ -1,6 +1,6 @@
 <h1>Editing Archive</h1>
 
-<% if can? :update, @archive %>
+<% if current_user&.admin? %>
   <%= render 'form' %>
 <% end %>
 
