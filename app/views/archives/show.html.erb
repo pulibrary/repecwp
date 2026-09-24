@@ -17,7 +17,7 @@
    <dd><%= @archive.url %></dd>
  </dl>
 
-<% if current_user&.admin? %>
+<% if @current_user&.admin? %>
    <%= link_to 'Edit', edit_archive_path(@archive, script_name: script_name) %>
 <% end %>
 <%= link_to 'Back', archives_path(script_name: script_name) %>

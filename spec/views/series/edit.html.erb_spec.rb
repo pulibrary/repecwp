@@ -6,14 +6,11 @@ RSpec.describe "series/edit", type: :view do
       :name => "Foo",
       :provider_institution => "pri:wwww",
       :handle => "handle2"
-))
+    ))
+    @current_user = user
   end
 
   let(:user) { FactoryBot.create(:princeton_admin) }
-
-  before(:each) do
-    sign_in user
-  end
 
   it "renders the edit series form" do
     render

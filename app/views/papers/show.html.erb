@@ -1,6 +1,6 @@
 <div id="notice"><%= notice %></div>
 
-<% if current_user&.admin? %>
+<% if @current_user&.admin? %>
   <%= link_to 'Edit', edit_paper_path(@paper, script_name: script_name), { class: 'button pul-icon-edit'} %>
   <%= series_link @paper.series_id %>
 <% end %>

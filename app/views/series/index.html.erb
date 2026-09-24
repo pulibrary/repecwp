@@ -1,7 +1,7 @@
 <div id="notice"><%= notice %></div>
   <h1>Series Listings</h1>
 
-  <% if current_user&.admin? %>
+  <% if @current_user&.admin? %>
     <%= link_to 'Add New Series', new_series_path(script_name: script_name), { class: 'button pul-icon-add pull-right'} %>
   <% end %>
 
@@ -25,7 +25,7 @@
           <td><%= series.papers.size %></td>
           <td><%= link_to 'View RDF', "#{script_name}/#{series.pri_handle}/#{series.pri_handle}.rdf" %>
           <td><%= link_to "View Papers", series_path(series, script_name: script_name) %></td>
-          <% if current_user&.admin? %>
+          <% if @current_user&.admin? %>
             <td><%= link_to 'Edit Series', edit_series_path(series, script_name: script_name) %></td>
           <% end %>
         </tr>
