@@ -5,10 +5,9 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-  helper_method :current_user
-
   def authenticate_user!
     request.path_info = request.path_info.sub(/^\/\//,'/')
+    @current_user = User.from_omniauth(request.env['omniauth.auth']) if request.env['omniauth.auth']
     super
   end
 end
