@@ -2,12 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Users::OmniauthCallbacksController do
-
-  before do
-    request.env['devise.mapping'] = Devise.mappings[:user]
-    controller.request.env['omniauth.auth'] = omniauth_response
-  end
+RSpec.describe OmniauthCallbacksController do
 
   describe 'logging in' do
     context 'with a valid cas login' do

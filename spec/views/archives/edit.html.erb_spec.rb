@@ -14,7 +14,7 @@ RSpec.describe "archives/edit", type: :view do
   let(:user) { FactoryBot.create(:princeton_admin) }
 
   before(:each) do
-    sign_in user
+    assign :current_user, user
   end
 
   it "renders the edit archive form" do

@@ -2,7 +2,7 @@
 
 <h1>Listing Archives</h1>
 
-<% if current_user&.admin? %>
+<% if @current_user&.admin? %>
   <%= link_to 'Add New Archive', new_archive_path(script_name: script_name), { class: 'button pul-icon-add pull-right'} %>
 <% end %>
 <table class="tablesorter">
@@ -27,7 +27,7 @@
         <td><%= archive.url %></td>
         <td><%= link_to 'RDF', "#{archives_path(archive, script_name: script_name)}.rdf" %></td>
         <td><%= link_to 'Show', archives_path(archive, script_name: script_name) %></td>
-        <% if current_user&.admin? %>
+        <% if @current_user&.admin? %>
           <td><%= link_to 'Edit', edit_archive_path(archive, script_name: script_name) %></td>
         <% end %>
       </tr>

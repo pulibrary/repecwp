@@ -3,12 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :get_current_user!
   before_action :authenticate_user!
 
-  helper_method :current_user
+  def get_current_user!
+    @current_user = User.from_omniauth(session[:omniauth]) if session[:omniauth]
+  end
 
   def authenticate_user!
-    request.path_info = request.path_info.sub(/^\/\//,'/')
-    super
+    redirect_to '/' unless @current_user
   end
 end

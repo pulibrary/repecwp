@@ -16,7 +16,6 @@ gem 'jbuilder'
 gem 'csv'
 gem 'faraday'
 
-gem 'devise'
 gem 'health-monitor-rails', '12.9.0'
 gem 'omniauth'
 gem "omniauth-cas"

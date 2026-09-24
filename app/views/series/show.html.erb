@@ -21,7 +21,7 @@
 </dl>
 
 <h2><%= @series.papers.size %> Attached Papers</h2>
-<% if current_user&.admin? %>
+<% if @current_user&.admin? %>
   <%= link_to 'Add New Paper', new_paper_path(script_name: script_name), { class: 'button pul-icon-add pull-right'} %>
 <% end %>
 <table class="tablesorter">
@@ -47,7 +47,7 @@
           <td><%= paper.keywords %></td>
           <td><%= paper.suppress %></td>
           <td><%= link_to 'View', paper_path(paper, script_name: script_name) %></td>
-          <% if current_user&.admin? %>
+          <% if @current_user&.admin? %>
             <td><%= link_to 'Edit', edit_paper_path(paper, script_name: script_name) %></td>
           <% end %>
         </tr>
