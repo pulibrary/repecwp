@@ -57,3 +57,7 @@ group :development do
 end
 
 gem 'json', '< 3.0'
+
+group :staging, :production do
+  gem 'honeybadger'
+end

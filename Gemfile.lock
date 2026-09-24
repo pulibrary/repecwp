@@ -114,6 +114,9 @@ GEM
     hashie (5.0.0)
     health-monitor-rails (12.9.0)
       railties (>= 6.1)
+    honeybadger (6.9.2)
+      logger
+      ostruct
     i18n (1.15.2)
       concurrent-ruby (~> 1.0)
     io-console (0.9.4)
@@ -167,6 +170,7 @@ GEM
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
+    ostruct (0.6.3)
     pg (1.5.4)
     pp (0.6.4)
       prettyprint
@@ -336,6 +340,7 @@ DEPENDENCIES
   factory_bot_rails
   faraday
   health-monitor-rails (= 12.9.0)
+  honeybadger
   jbuilder
   jquery-rails
   jquery-tablesorter
