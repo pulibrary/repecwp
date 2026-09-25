@@ -54,7 +54,7 @@ group :development do
   gem 'ed25519'
 end
 
-gem 'json', '< 3.0'
+gem 'json', '< 4.0'
 
 group :staging, :production do
   gem 'honeybadger'
