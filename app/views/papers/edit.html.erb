@@ -1,7 +1,7 @@
 <h1>Editing Paper</h1>
 
-<% if current_user&.admin? %>
-  <% if current_user&.admin? %>
+<% if @current_user&.admin? %>
+  <% if @current_user&.admin? %>
     <p><%= link_to( 'Delete Paper', paper_path(@paper, script_name: script_name), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button warning' ) %></p>
   <% end %>
   <%= render 'form' %>

@@ -51,13 +51,10 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include Capybara::DSL
-  config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include Devise::Test::ControllerHelpers, type: :view
 
   config.before(:each, type: :view) do
     WebMock.enable!
     WebMock.disable_net_connect!(allow_localhost: true)
-    Warden.test_mode!
     OmniAuth.config.test_mode = true
     Capybara.javascript_driver = :selenium
   end
@@ -65,14 +62,10 @@ RSpec.configure do |config|
   config.before(:each, type: :feature) do
     WebMock.enable!
     WebMock.disable_net_connect!(allow_localhost: true)
-    Warden.test_mode!
     OmniAuth.config.test_mode = true
     Capybara.javascript_driver = :selenium
   end
 
-  config.after(:each, type: :view) do
-    Warden.test_reset!
-  end
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:

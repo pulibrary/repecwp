@@ -18,10 +18,10 @@ RSpec.describe "pul-assets/_menu", type: :view, js: true do
   context 'with a logged in user' do
     let(:user) { FactoryBot.create(:princeton_admin) }
     before do
-      sign_in user
+      assign(:current_user, user)
     end
     it "shows the user's name" do
-      render 
+      render 'pul-assets/menu', {:@current_user => user}
       expect(rendered).to include("Logout #{user.uid}")
     end
   end
