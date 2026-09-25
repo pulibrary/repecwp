@@ -104,7 +104,8 @@ GEM
       net-http (~> 0.5)
     ffi (1.16.3)
     hashdiff (1.1.0)
-    hashie (5.0.0)
+    hashie (5.1.0)
+      logger
     health-monitor-rails (12.9.0)
       railties (>= 6.1)
     honeybadger (6.9.2)
@@ -155,7 +156,7 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
-    omniauth-cas (3.0.0)
+    omniauth-cas (3.0.2)
       addressable (~> 2.8)
       nokogiri (~> 1.12)
       omniauth (~> 2.1)
