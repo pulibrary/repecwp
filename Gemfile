@@ -19,7 +19,6 @@ gem 'faraday'
 gem 'health-monitor-rails', '12.9.0'
 gem 'omniauth'
 gem "omniauth-cas"
-gem "omniauth-rails_csrf_protection"
 gem "pg"
 gem 'simple_form'
 gem 'susy'

@@ -1,6 +1,6 @@
 class LogoutController < ActionController::Base
     def logout
-        session[:omniauth] = nil
+        reset_session
         redirect_to '/'
     end
 end
