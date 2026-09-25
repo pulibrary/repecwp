@@ -78,7 +78,6 @@ class SeriesController < ApplicationController
       @series = Series.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def series_params
       params.require(:series).permit(:name, :provider_name, :provider_homepage, :provider_institution, :maintainer_name, :maintainer_email, :series_type, :handle, :sectionurlid)
     end
