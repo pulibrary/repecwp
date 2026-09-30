@@ -2,7 +2,7 @@ class OmniauthCallbacksController < ActionController::Base
   def entra_id
     omniauth_hash = {
       'provider' => request.env["omniauth.auth"]&.provider,
-      'uid' => request.env['omniauth.auth'].extra&.raw_info&.email&.partition('@princeton.edu').first
+      'uid' => request.env['omniauth.auth'].extra&.raw_info&.unique_name&.partition('@princeton.edu').first
     }
     @user = User.from_omniauth(omniauth_hash)
 

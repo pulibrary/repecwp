@@ -6,7 +6,7 @@ RSpec.describe OmniauthCallbacksController do
 
   describe 'logging in' do
     context 'with a valid entra_id login' do
-      let(:omniauth_response) { OmniAuth::AuthHash.new(provider: 'entra_id', extra: {raw_info: {email: 'someuid@princeton.edu'}}) }
+      let(:omniauth_response) { OmniAuth::AuthHash.new(provider: 'entra_id', extra: {raw_info: {unique_name: 'someuid@princeton.edu'}}) }
       before { request.env['omniauth.auth'] = omniauth_response }
 
       context 'who is not already in the database' do
