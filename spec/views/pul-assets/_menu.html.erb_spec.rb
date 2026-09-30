@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "pul-assets/_menu", type: :view, js: true do
-  let(:omniauth_response) { OmniAuth::AuthHash.new(provider: 'cas', uid: 'someuid') }
+  let(:omniauth_response) { OmniAuth::AuthHash.new(provider: 'entra_id', extra: {raw_info: {unique_name: 'someuid@princeton.edu'}}) }
   before do
-    OmniAuth.config.mock_auth[:cas] = omniauth_response
+    OmniAuth.config.mock_auth[:entra_id] = omniauth_response
   end
   it 'has a login button' do
     render
@@ -33,7 +33,7 @@ RSpec.describe "pul-assets/_menu", type: :view, js: true do
     it 'allows the user to login via the ui' do
       visit '/'
       page.click_link('Login')
-      expect(page.body).to include('Successfully authenticated from CAS account.')
+      expect(page.body).to include('Successfully authenticated from your Princeton account.')
       expect(page.body).to include("Logout #{user.uid}")
     end
   end

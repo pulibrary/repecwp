@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    username
+    uid
   end
 
   def self.from_omniauth(omniauth_hash)
