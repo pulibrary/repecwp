@@ -133,7 +133,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-tablesorter (1.28.0)
       railties (>= 3.2)
-    json (3.0.2)
+    json (3.0.0)
     jwt (3.3.0)
       base64
     logger (1.7.0)
@@ -357,7 +357,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-tablesorter
-  json (< 4.0)
+  json (<= 3.0)
   nokogiri
   omniauth
   omniauth-entra-id
