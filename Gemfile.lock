@@ -44,10 +44,10 @@ GEM
       version_gem (~> 1.1, >= 1.1.14)
     auth-sanitizer (0.2.3)
       version_gem (~> 1.1, >= 1.1.14)
-    axe-core-api (4.13.0)
+    axe-core-api (4.14.0)
       dumb_delegator
-    axe-core-rspec (4.13.0)
-      axe-core-api (= 4.13.0)
+    axe-core-rspec (4.14.0)
+      axe-core-api (= 4.14.0)
     base64 (0.3.0)
     bcrypt_pbkdf (1.1.2)
     bigdecimal (4.1.3)
