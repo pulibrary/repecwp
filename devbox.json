@@ -1,6 +1,6 @@
 {
   "packages": {
-    "ruby":   {"version": "3.4.1"},
+    "ruby":   {"version": "4.0.9"},
     "pkg-config": {"version": "latest"},
 
     "libyaml": {"version": "latest", "outputs": ["out", "dev"]},
