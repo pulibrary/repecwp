@@ -14,6 +14,7 @@ jobs:
       - checkout
       - ruby/install-deps:
           key: repec-bundle
+    resource_class: large
 
   test:
     parameters:
@@ -71,7 +72,7 @@ jobs:
           command: semgrep ci --config auto
   deploy:
     docker:
-      - image: cimg/ruby:3.4.1
+      - image: cimg/ruby:4.0.9
     steps:
       - run:
           name: Deploy to Staging
@@ -84,13 +85,13 @@ workflows:
       - build:
           matrix:
             parameters:
-              ruby-version: ["3.4.1"]
+              ruby-version: ["4.0.9"]
       - test:
           requires:
             - build
           matrix:
             parameters:
-              ruby-version: ["3.4.1"]
+              ruby-version: ["4.0.9"]
       - deploy:
           requires:
             - test
@@ -103,5 +104,5 @@ workflows:
             - build
           matrix:
             parameters:
-              ruby-version: ["3.4.1"]
+              ruby-version: ["4.0.9"]
       - semgrep
