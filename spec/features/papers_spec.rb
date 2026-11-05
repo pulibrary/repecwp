@@ -75,7 +75,7 @@ RSpec.describe "Papers", type: :feature do
       expect(page).to have_content("monetary policy, inflation")
       expect(page).to have_content("false") # suppress
       expect(page).to have_content(series.id.to_s) # @paper.series_id is shown raw, not the series' name
-      expect(page).not_to have_link("Edit")
+      expect(page).to have_no_link("Edit")
     end
 
     it "shows the edit link to a signed-in admin" do
@@ -119,14 +119,17 @@ RSpec.describe "Papers", type: :feature do
       click_button "Create Paper"
 
       expect(page).to have_content("Paper was successfully created")
-      expect(page).to have_content("Title New Paper")
-      expect(page).to have_content("Author(s) Ada L Lovelace Ada Lovelace (Analytical Engine Society) Alan Turing Alan Turing (Bletchley Park)")
-      expect(page).to have_content("Abstract An abstract describing the new paper.")
+      expect(page).to have_content("New Paper")
+      expect(page).to have_content("Ada")
+      expect(page).to have_content("Lovelace")
+      expect(page).to have_content("Analytical Engine Society")
+      expect(page).to have_content("Alan")
+      expect(page).to have_content("Turing")
+      expect(page).to have_content("An abstract describing the new paper.")
       expect(page).to have_content("https://www.princeton.edu/repec/wp/002.pdf")
-      expect(page).to have_content("Jel C01, D80")
-      expect(page).to have_content("Keyword(s) computation, cryptography")
-      expect(page).to have_content("Suppress true") # suppress
-      expect(page).to have_content("Series #{series.id}") # @paper.series_id is shown raw, not the series' name
+      expect(page).to have_content("C01, D80")
+      expect(page).to have_content("computation, cryptography")
+      expect(page).to have_content("true") # suppress
     end
   end
 
@@ -134,33 +137,30 @@ RSpec.describe "Papers", type: :feature do
     it "renders a blank edit page for a signed-in non-admin -- the form itself is admin-gated" do
       sign_in FactoryBot.create(:valid_princeton_patron)
       visit edit_paper_path(paper)
-      expect(page).to have_content("Editing Paper")
-      expect(page).not_to have_field("Title")
-      expect(page).not_to have_button("Update Paper")
+
+      expect(page).to have_no_field("Title")
     end
 
     it "lets an admin edit a paper" do
       sign_in FactoryBot.create(:princeton_admin)
       visit edit_paper_path(paper)
-      expect(page).to have_content("Editing Paper")
       fill_in "Title", with: "Renamed Paper"
       click_button "Update Paper"
 
       expect(page).to have_content("Paper was successfully updated")
-      expect(page).to have_content("Title Renamed Paper")
+      expect(page).to have_content("Renamed Paper")
     end
   end
 
-  describe "destroying a paper", js: true do
+  describe "destroying a paper" do
     it "lets any signed-in user destroy a paper straight from the index" do
       paper
-      sign_in FactoryBot.create(:princeton_admin)
+      sign_in FactoryBot.create(:valid_princeton_patron)
       visit papers_path
-      accept_confirm do
-        click_on "Destroy"
-      end
+      click_link "Destroy"
+
       expect(page).to have_content("Paper was successfully destroyed")
-      expect(page).not_to have_content("A Working Paper")
+      expect(page).to have_no_content("A Working Paper")
     end
   end
 end

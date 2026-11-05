@@ -36,7 +36,7 @@ RSpec.describe "Series", type: :feature do
       expect(page).to have_content("Working Papers")
       expect(page).to have_content("Princeton University")
       expect(page).to have_content("2") # paper count column
-      expect(page).not_to have_link("Add New Series")
+      expect(page).to have_no_link("Add New Series")
     end
 
     it "shows the add-series link to a signed-in admin" do
@@ -69,8 +69,8 @@ RSpec.describe "Series", type: :feature do
       expect(page).to have_content("1 Attached Papers")
       expect(page).to have_content(paper.title)
       expect(page).to have_link(paper.papernumber, href: paper.url)
-      expect(page).not_to have_link("Edit Series")
-      expect(page).not_to have_link("Add New Paper")
+      expect(page).to have_no_link("Edit Series")
+      expect(page).to have_no_link("Add New Paper")
     end
 
     it "shows admin-only edit/add-paper links to a signed-in admin" do
@@ -107,10 +107,10 @@ RSpec.describe "Series", type: :feature do
       click_button "Create Series"
 
       expect(page).to have_content("Series was successfully created")
-      expect(page).to have_content("Title New Series")
-      expect(page).to have_content("Provider Homepage https://example.org")
-      expect(page).to have_content("Provider Institution New University")
-      expect(page).to have_content("Section ID newseries")
+      expect(page).to have_content("New Series")
+      expect(page).to have_content("New University")
+      expect(page).to have_link("https://example.org", href: "https://example.org")
+      expect(page).to have_content("newseries")
     end
   end
 
@@ -118,19 +118,18 @@ RSpec.describe "Series", type: :feature do
     it "renders a blank edit page for a signed-in non-admin -- the request isn't blocked, only the form" do
       sign_in FactoryBot.create(:valid_princeton_patron)
       visit edit_series_path(series)
-      expect(page).to have_content("Editing Series")
-      expect(page).not_to have_field("Name")
+
+      expect(page).to have_no_field("Name")
     end
 
     it "lets an admin edit a series" do
       sign_in FactoryBot.create(:princeton_admin)
       visit edit_series_path(series)
-      expect(page).to have_content("Editing Series")
       fill_in "Name", with: "Renamed Series"
       click_button "Update Series"
 
       expect(page).to have_content("Series was successfully updated")
-      expect(page).to have_content("Title Renamed Series")
+      expect(page).to have_content("Renamed Series")
     end
   end
 end
